@@ -34,13 +34,14 @@
       margin: 0;
       font-size: 3rem;
       color: var(--gold);
-      animation: fadeIn 2s ease-out;
+      animation: glowing 3s ease-in-out infinite;
     }
 
-    /* Remove the "neo" design and revert to a simple glow */
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(-20px); }
-      100% { opacity: 1; transform: translateY(0); }
+    /* Keep the name animation intact with glowing effect */
+    @keyframes glowing {
+      0% { text-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold), 0 0 30px var(--gold); }
+      50% { text-shadow: 0 0 20px var(--gold), 0 0 40px var(--gold), 0 0 60px var(--gold); }
+      100% { text-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold), 0 0 30px var(--gold); }
     }
 
     nav {
@@ -197,7 +198,7 @@
   <div class="background-animation"></div>
 
   <header>
-    <h1>Welcome to Promise Atelier</h1>
+    <h1>Welcome to <span>PROMISE ATELIER</span></h1>
     <p>Your destination for exquisite, handcrafted designs.</p>
     <a class="cta-button" href="https://wa.me/2348072370300?text=Hello%20Promise%20Atelier,%20I'm%20interested%20in%20your%20design%20services!" target="_blank">Schedule Consultation</a>
   </header>
@@ -311,4 +312,4 @@
     <p>&copy; 2025 Promise Atelier. All rights reserved.</p>
   </footer>
 </body>
-  </html>
+</html>
