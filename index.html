@@ -1,23 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Promise Atelier</title>
-    <link rel="stylesheet" href="styles/styles.css">
+  <meta charset="UTF-8">
+  <title>Promise Atelier</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .hero {
+      background-image: urlbackground-image: url('liquid-paint.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    nav h1 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    .center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .center h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .get-started {
+      padding: 12px 24px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .get-started:hover {
+      background: #f0f0f0;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Promise Atelier</h1>
-        <button class="request-quote">Request Quote</button>
-    </header>
-
-    <main>
-        <section class="content">
-            <h2>Our Services</h2>
-            <p>Explore our creative designs and more!</p>
-        </section>
-    </main>
-
-    <script src="scripts/scripts.js"></script>
+  <div class="hero">
+    <nav>
+      <h1>Promise Atelier</h1>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+    <div class="center">
+      <h2>Welcome to Promise Atelier</h2>
+      <button class="get-started">Get Started</button>
+    </div>
+  </div>
 </body>
 </html>
