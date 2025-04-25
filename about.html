@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Promise Atelier</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+    section {
+      background: url('https://via.placeholder.com/1920x1080.png?text=Pattern') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .team-member {
+      display: inline-block;
+      margin: 30px;
+      width: 300px;
+      text-align: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+    }
+
+    .team-member img {
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .team-member h3 {
+      color: #d4af37;
+    }
+
+    .team-member p {
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>About Promise Atelier</h1>
-    <p>Redefining luxury branding, one vision at a time.</p>
+    <h1>About Us</h1>
+    <p>Our passion is delivering luxury brand experiences.</p>
   </header>
 
   <nav>
@@ -20,16 +52,18 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <section class="section">
-    <h2>Our Story</h2>
-    <p>Promise Atelier was born out of a passion for elegant, timeless design. Our mission is to help brands express themselves through visuals that leave lasting impressions.</p>
-    
-    <h2>Why Choose Us?</h2>
-    <ul>
-      <li>Unique, tailored brand kits</li>
-      <li>Modern design with a luxury touch</li>
-      <li>Exceptional client service</li>
-    </ul>
+  <section>
+    <h2>Meet The Team</h2>
+    <div class="team-member">
+      <img src="team-member.jpg" alt="Team Member">
+      <h3>Jane Doe</h3>
+      <p>Creative Director</p>
+    </div>
+    <div class="team-member">
+      <img src="team-member.jpg" alt="Team Member">
+      <h3>John Smith</h3>
+      <p>Brand Strategist</p>
+    </div>
   </section>
 
   <footer>
