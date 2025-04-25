@@ -9,6 +9,8 @@
       --midnight-blue: #191970;
       --gold: #FFD700;
       --charcoal-gray: #2F2F2F;
+      --modern-gray: #3a3a3a;
+      --soft-blue: #00bcd4;
     }
 
     body {
@@ -34,14 +36,12 @@
       margin: 0;
       font-size: 3rem;
       color: var(--gold);
-      animation: glowing 3s ease-in-out infinite;
+      animation: fadeIn 2s ease-out;
     }
 
-    /* Keep the name animation intact with glowing effect */
-    @keyframes glowing {
-      0% { text-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold), 0 0 30px var(--gold); }
-      50% { text-shadow: 0 0 20px var(--gold), 0 0 40px var(--gold), 0 0 60px var(--gold); }
-      100% { text-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold), 0 0 30px var(--gold); }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     nav {
@@ -112,26 +112,25 @@
       margin: 0 auto;
     }
 
-    /* Engaging background animation */
-    .background-animation {
+    /* Dust Falling Animation */
+    .dust-falling-animation {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle, rgba(255, 215, 0, 0.3), rgba(0, 0, 0, 0.7));
-      animation: pulseBackground 5s infinite alternate;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
       z-index: -1;
+      pointer-events: none;
+      animation: dustFall 5s infinite linear;
     }
 
-    @keyframes pulseBackground {
+    @keyframes dustFall {
       0% {
-        transform: scale(1);
-        opacity: 0.6;
+        transform: translateY(-100%);
       }
       100% {
-        transform: scale(1.05);
-        opacity: 0.9;
+        transform: translateY(100%);
       }
     }
 
@@ -194,11 +193,11 @@
   </style>
 </head>
 <body>
-  <!-- Background Animation -->
-  <div class="background-animation"></div>
+  <!-- Dust Falling Animation -->
+  <div class="dust-falling-animation"></div>
 
   <header>
-    <h1>Welcome to <span>PROMISE ATELIER</span></h1>
+    <h1>Welcome to Promise Atelier</h1>
     <p>Your destination for exquisite, handcrafted designs.</p>
     <a class="cta-button" href="https://wa.me/2348072370300?text=Hello%20Promise%20Atelier,%20I'm%20interested%20in%20your%20design%20services!" target="_blank">Schedule Consultation</a>
   </header>
@@ -312,4 +311,4 @@
     <p>&copy; 2025 Promise Atelier. All rights reserved.</p>
   </footer>
 </body>
-</html>
+      </html>
