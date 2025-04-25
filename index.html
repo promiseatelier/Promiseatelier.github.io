@@ -6,9 +6,11 @@
   <title>PROMISE ATELIER - Luxury Designs</title>
   <style>
     :root {
-      --gold: #d4af37;
-      --luxury-purple: #743089;
-      --wine-red: #80091B;
+      --champagne-gold: #D4AF37;
+      --soft-lavender: #B497BD;
+      --peach-blush: #F7D1C4;
+      --mint-green: #A8D5BA;
+      --creamy-ivory: #FAF3DD;
       --text-light: rgba(255, 255, 255, 0.9);
     }
 
@@ -16,70 +18,31 @@
       font-family: 'Playfair Display', serif;
       margin: 0;
       padding: 0;
-      background-color: var(--wine-red);
-      color: var(--gold);
+      background-color: var(--peach-blush);
+      color: var(--creamy-ivory);
       position: relative;
       overflow-x: hidden;
     }
 
-    /* Decorative Circles */
-    .circle {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.05);
-      z-index: 0;
-    }
-
-    .circle1 {
-      width: 200px;
-      height: 200px;
-      top: 50px;
-      left: 50px;
-    }
-
-    .circle2 {
-      width: 300px;
-      height: 300px;
-      bottom: 100px;
-      right: 100px;
-    }
-
-    /* Decorative Triangles */
-    .triangle {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 100px solid transparent;
-      border-right: 100px solid transparent;
-      border-bottom: 100px solid rgba(255, 255, 255, 0.05);
-      z-index: 0;
-    }
-
-    .triangle1 {
-      top: 200px;
-      left: 200px;
-      transform: rotate(45deg);
-    }
-
-    .triangle2 {
-      bottom: 200px;
-      right: 200px;
-      transform: rotate(-45deg);
-    }
-
     header {
-      background: var(--luxury-purple);
+      background: var(--soft-lavender);
       padding: 100px 0;
       text-align: center;
-      border-bottom: 3px solid var(--gold);
+      border-bottom: 3px solid var(--champagne-gold);
       position: relative;
       z-index: 1;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      color: var(--champagne-gold);
     }
 
     nav {
       display: flex;
       justify-content: center;
-      background: var(--luxury-purple);
+      background: var(--soft-lavender);
       padding: 25px 0;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       position: relative;
@@ -87,19 +50,19 @@
     }
 
     nav a {
-      color: var(--gold);
+      color: var(--champagne-gold);
       text-decoration: none;
       margin: 0 30px;
       font-size: 1.2rem;
       padding: 12px 25px;
-      border: 2px solid var(--gold);
+      border: 2px solid var(--champagne-gold);
       border-radius: 30px;
       transition: all 0.3s ease;
     }
 
     nav a:hover {
-      background: var(--gold);
-      color: var(--luxury-purple);
+      background: var(--champagne-gold);
+      color: var(--soft-lavender);
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
     }
@@ -107,27 +70,27 @@
     .cta-button {
       display: inline-block;
       padding: 15px 45px;
-      background: linear-gradient(45deg, var(--gold), #a8860d);
+      background: linear-gradient(45deg, var(--champagne-gold), #a8860d);
       color: #000;
       font-weight: bold;
       border-radius: 30px;
       text-decoration: none;
       margin-top: 30px;
       transition: all 0.3s ease;
-      border: 2px solid var(--gold);
+      border: 2px solid var(--champagne-gold);
     }
 
     .cta-button:hover {
-      background: var(--gold);
+      background: var(--champagne-gold);
       color: #000;
       box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
     }
 
     .luxury-section {
-      background: var(--wine-red);
+      background: var(--peach-blush);
       padding: 60px 20px;
       text-align: center;
-      color: var(--gold);
+      color: var(--creamy-ivory);
       position: relative;
       z-index: 1;
     }
@@ -135,6 +98,7 @@
     .luxury-section h2 {
       font-size: 2.5rem;
       margin-bottom: 20px;
+      color: var(--champagne-gold);
     }
 
     .luxury-section p {
@@ -155,16 +119,16 @@
     }
 
     .package {
-      background: var(--luxury-purple);
+      background: var(--soft-lavender);
       padding: 30px;
       border-radius: 15px;
-      border: 1px solid var(--gold);
+      border: 1px solid var(--champagne-gold);
       width: 300px;
     }
 
     .package h3 {
       margin-top: 0;
-      color: var(--gold);
+      color: var(--champagne-gold);
     }
 
     .package ul {
@@ -180,17 +144,63 @@
     .contact-info {
       text-align: center;
       padding: 40px 20px;
-      background: var(--luxury-purple);
+      background: var(--soft-lavender);
       margin: 50px 0;
       position: relative;
       z-index: 1;
     }
 
     .contact-info a {
-      color: var(--gold);
+      color: var(--champagne-gold);
       text-decoration: underline;
     }
 
-    .gallery {
-      display: grid;
-      grid-template36
+    footer {
+      background: var(--mint-green);
+      color: var(--creamy-ivory);
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Promise Atelier</h1>
+    <p>Your destination for exquisite, handcrafted designs.</p>
+  </header>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="luxury-section" id="services">
+    <h2>Our Services</h2>
+    <p>At Promise Atelier, we offer bespoke design solutions tailored to your unique style and needs. Whether you're looking for custom fashion pieces, home décor, or personalized gifts, we bring your vision to life with elegance and craftsmanship.</p>
+  </section>
+
+  <section class="luxury-section" id="pricing">
+    <h2>Pricing</h2>
+    <p>We believe in transparent pricing with no hidden fees. Below are our standard packages:</p>
+
+    <div class="pricing-table">
+      <div class="package">
+        <h3>Basic Package</h3>
+        <ul>
+          <li>1 Custom Design</li>
+          <li>Consultation Session</li>
+          <li>Delivery Included</li>
+        </ul>
+        <p><strong>₦50,000</strong></p>
+      </div>
+      <div class="package">
+        <h3>Premium Package</h3>
+        <ul>
+          <li>3 Custom Designs</li>
+          <li>Priority Consultation</li>
+          <li>Express Delivery</li>
+        </ul>
+        <p><strong>₦120,0000
