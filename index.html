@@ -4,16 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home | Promise Atelier</title>
-  <link rel="stylesheet" href="style.css">
   <style>
-    /* Body background image */
+    /* General body settings */
     body {
       margin: 0;
       padding: 0;
-      background: url('https://via.placeholder.com/1920x1080.png?text=Luxury+Pattern') no-repeat center center fixed;
+      background: url('https://via.placeholder.com/1920x1080.png?text=Luxury+Wallpaper') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
       font-family: 'Arial', sans-serif;
+      color: #fff;
+      height: 100vh;
+      overflow: hidden;
     }
 
     /* Header section */
@@ -28,22 +29,22 @@
 
     header h1 {
       font-size: 80px;
+      font-weight: 700;
       color: #d4af37;
-      font-weight: bold;
-      letter-spacing: 2px;
       text-transform: uppercase;
+      letter-spacing: 5px;
     }
 
     header p {
-      font-size: 22px;
-      color: #fff;
+      font-size: 24px;
+      color: rgba(255, 255, 255, 0.9);
       margin-top: 10px;
     }
 
-    /* Stylish buttons */
+    /* Call to action button */
     .cta-button {
       margin-top: 30px;
-      padding: 14px 35px;
+      padding: 15px 40px;
       background-color: #d4af37;
       color: #000;
       font-size: 20px;
@@ -60,22 +61,23 @@
       transform: scale(1.1);
     }
 
-    /* Navigation links */
+    /* Navigation links styling */
     nav {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
       text-align: center;
-      margin-top: 60px;
-      z-index: 10;
     }
 
     nav a {
+      margin: 0 25px;
       color: #d4af37;
       text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      margin: 0 20px;
-      padding: 8px 16px;
-      border-radius: 30px;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 10px 20px;
       background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 30px;
       transition: all 0.3s ease;
     }
 
@@ -85,25 +87,22 @@
       transform: scale(1.1);
     }
 
-    /* 3D shape */
+    /* 3D Shape effect on hover */
     .moving-shape {
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 300px;
-      height: 300px;
-      background-color: rgba(0, 0, 0, 0.6);
+      width: 350px;
+      height: 350px;
+      background-color: rgba(0, 0, 0, 0.4);
       border-radius: 50%;
       transform: translate(-50%, -50%);
-      animation: moveShape 5s infinite ease-in-out;
+      transition: transform 0.4s ease;
     }
 
-    @keyframes moveShape {
-      0% { transform: translate(-50%, -50%) scale(1); }
-      25% { transform: translate(-60%, -55%) scale(1.2); }
-      50% { transform: translate(-50%, -60%) scale(1); }
-      75% { transform: translate(-40%, -55%) scale(1.2); }
-      100% { transform: translate(-50%, -50%) scale(1); }
+    /* Hover effect for 3D shape movement */
+    .moving-shape:hover {
+      transform: translate(-50%, -50%) scale(1.15);
     }
   </style>
 </head>
