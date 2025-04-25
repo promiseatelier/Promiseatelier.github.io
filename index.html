@@ -1,209 +1,209 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PROMISE ATELIER - Luxury Designs</title>
   <style>
     :root {
-      --midnight-blue: #191970;
+      --charcoal-gray: #36454F;
+      --navy-blue: #000080;
       --gold: #FFD700;
-    }
+      --text-light: rgba(255, 255, 255, 0.9);
+    }body {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--charcoal-gray);
+  color: var(--text-light);
+  position: relative;
+  overflow-x: hidden;
+}
 
-    body {
-      font-family: 'Playfair Display', serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--midnight-blue);
-      color: var(--gold);
-      position: relative;
-      overflow-x: hidden;
-    }
+header {
+  background: var(--navy-blue);
+  padding: 80px 0;
+  text-align: center;
+  border-bottom: 3px solid var(--gold);
+}
 
-    header {
-      background: var(--midnight-blue);
-      padding: 100px 0;
-      text-align: center;
-      border-bottom: 3px solid var(--gold);
-      position: relative;
-      z-index: 1;
-    }
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: var(--gold);
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 3rem;
-      color: var(--gold);
-    }
+header p {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
 
-    nav {
-      display: flex;
-      justify-content: center;
-      background: var(--midnight-blue);
-      padding: 25px 0;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      position: relative;
-      z-index: 1;
-    }
+.cta-button {
+  display: inline-block;
+  padding: 15px 45px;
+  background: var(--gold);
+  color: var(--navy-blue);
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  border: 2px solid var(--gold);
+}
 
-    nav a {
-      color: var(--gold);
-      text-decoration: none;
-      margin: 0 30px;
-      font-size: 1.2rem;
-      padding: 12px 25px;
-      border: 2px solid var(--gold);
-      border-radius: 30px;
-      transition: all 0.3s ease;
-    }
+.cta-button:hover {
+  background: transparent;
+  color: var(--gold);
+  border-color: var(--text-light);
+}
 
-    nav a:hover {
-      background: var(--gold);
-      color: var(--midnight-blue);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-    }
+nav {
+  display: flex;
+  justify-content: center;
+  background: var(--navy-blue);
+  padding: 20px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
 
-    .cta-button {
-      display: inline-block;
-      padding: 15px 45px;
-      background: linear-gradient(45deg, var(--gold), #b8860b);
-      color: var(--midnight-blue);
-      font-weight: bold;
-      border-radius: 30px;
-      text-decoration: none;
-      margin-top: 30px;
-      transition: all 0.3s ease;
-      border: 2px solid var(--gold);
-    }
+nav a {
+  color: var(--gold);
+  text-decoration: none;
+  margin: 0 25px;
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  border: 2px solid var(--gold);
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
 
-    .cta-button:hover {
-      background: var(--gold);
-      color: var(--midnight-blue);
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
-    }
+nav a:hover {
+  background: var(--gold);
+  color: var(--navy-blue);
+  transform: translateY(-2px);
+}
 
-    .luxury-section {
-      background: var(--midnight-blue);
-      padding: 60px 20px;
-      text-align: center;
-      color: var(--gold);
-      position: relative;
-      z-index: 1;
-    }
+.luxury-section {
+  background: var(--charcoal-gray);
+  padding: 60px 20px;
+  text-align: center;
+}
 
-    .luxury-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: var(--gold);
-    }
+.luxury-section h2 {
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
 
-    .luxury-section p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+.luxury-section p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-    .pricing-table {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin: 50px 0;
-      padding: 0 20px;
-      position: relative;
-      z-index: 1;
-    }
+.pricing-table {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 50px 0;
+  padding: 0 20px;
+}
 
-    .package {
-      background: var(--midnight-blue);
-      padding: 30px;
-      border-radius: 15px;
-      border: 1px solid var(--gold);
-      width: 300px;
-    }
+.package {
+  background: var(--navy-blue);
+  padding: 30px;
+  border-radius: 15px;
+  border: 2px solid var(--gold);
+  width: 300px;
+  text-align: center;
+}
 
-    .package h3 {
-      margin-top: 0;
-      color: var(--gold);
-    }
+.package h3 {
+  margin-top: 0;
+  color: var(--gold);
+}
 
-    .package ul {
-      list-style: none;
-      padding: 0;
-      color: var(--gold);
-    }
+.package ul {
+  list-style: none;
+  padding: 0;
+  color: var(--text-light);
+  margin: 20px 0;
+}
 
-    .package ul li {
-      margin: 10px 0;
-    }
+.package ul li {
+  margin: 10px 0;
+}
 
-    .contact-info {
-      text-align: center;
-      padding: 40px 20px;
-      background: var(--midnight-blue);
-      margin: 50px 0;
-      position: relative;
-      z-index: 1;
-    }
+.package p strong {
+  color: var(--gold);
+  font-size: 1.2rem;
+}
 
-    .contact-info a {
-      color: var(--gold);
-      text-decoration: underline;
-    }
+.contact-info {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--charcoal-gray);
+  color: var(--text-light);
+  margin: 50px 0;
+}
 
-    footer {
-      background: var(--midnight-blue);
-      color: var(--gold);
-      text-align: center;
-      padding: 20px 0;
-      position: relative;
-      z-index: 1;
-    }
+.contact-info a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  background: var(--navy-blue);
+  color: var(--text-light);
+  text-align: center;
+  padding: 20px 0;
+}
+
   </style>
 </head>
 <body>
   <header>
     <h1>Welcome to Promise Atelier</h1>
     <p>Your destination for exquisite, handcrafted designs.</p>
-    <a class="cta-button" href="https://wa.me/2348072370300" target="_blank">Schedule Consultation</a>
-  </header>
-
-  <nav>
+    <a class="cta-button" href="https://wa.me/2348072370300?text=Hello%20Promise%20Atelier%2C%20I'm%20interested%20in%20your%20design%20services!" target="_blank">Schedule Consultation</a>
+  </header>  <nav>
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
-  </nav>
-
-  <section class="luxury-section" id="services">
+  </nav>  <section class="luxury-section" id="services">
     <h2>Our Services</h2>
-    <p>At Promise Atelier, we specialize in creating stunning designs tailored to your business needs. Whether you're looking for eye-catching flyers, unique logos, or personalized posters, we bring your vision to life with elegance and craftsmanship.</p>
-  </section>
-
-  <section class="luxury-section" id="pricing">
+    <p>At Promise Atelier, we specialize in stunning business flyers, unique logos for your brand, and eye-catching posters tailored to your vision.</p>
+  </section>  <section class="luxury-section" id="pricing">
     <h2>Pricing</h2>
-    <p>We believe in transparent pricing with no hidden fees. Below are our standard packages:</p>
+    <p>We believe in transparent pricing with no hidden fees. Choose your package:</p><div class="pricing-table">
+  <div class="package">
+    <h3>Basic Package</h3>
+    <ul>
+      <li>1 Custom Design</li>
+      <li>Consultation Session</li>
+    </ul>
+    <p><strong>₦5,000</strong></p>
+  </div>
+  <div class="package">
+    <h3>Premium Package</h3>
+    <ul>
+      <li>2 Custom Designs</li>
+      <li>Video Editing</li>
+      <li>Priority Consultation</li>
+    </ul>
+    <p><strong>₦10,000</strong></p>
+  </div>
+</div>
 
-    <div class="pricing-table">
-      <div class="package">
-        <h3>Basic Package</h3>
-        <ul>
-          <li>1 Custom Design</li>
-          <li>Consultation Session</li>
-        </ul>
-        <p><strong>₦5,000</strong></p>
-      </div>
-      <div class="package">
-        <h3>Premium Package</h3>
-        <ul>
-          <li>2 Custom Designs</li>
-          <li>Video Editing</li>
-          <li>Priority Consultation</li>
-        </ul>
-        <p><strong>₦10,000</strong></p>
-      </div>
-    </div>
-  </section>
-
-  <section class="contact-info" id="contact">
+  </section>  <section class="contact-info" id="contact">
     <h2>Contact Us</h2>
-    <11
+    <p>📞 <a href="tel:08072370300">08072370300</a> | <a href="tel:09162615672">09162615672</a></p>
+    <p>📧 <a href="mailto:promiseatelier1@gmail.com?subject=Design%20Services%20Inquiry&body=Hello%20Promise%20Atelier%2C%20I'm%20interested%20in%20your%20design%20services!">promiseatelier1@gmail.com</a></p>
+    <p>💰 Payment Method: Bank transfers only.</p>
+  </section>  <footer>
+    <p>&copy; 2025 Promise Atelier. All rights reserved.</p>
+  </footer>
+</body>
+</html>
