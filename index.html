@@ -2,98 +2,114 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Promise Atelier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"
+  <link rel="stylesheet" href="style.css">
   <style>
-    * {
+    /* Background styling */
+    body {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    .hero {
-      background-image: urlbackground-image: url('liquid-paint.jpg');
-      background-size: cover;
-      background-position: center;
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('PROMISE%20ATELIER_20250425_094505_0000.jpg') center center/cover no-repeat fixed;
+      font-family: 'Arial', sans-serif;
+      color: #d4af37;
       height: 100vh;
-      color: white;
-      display: flex;
-      flex-direction: column;
+      overflow: hidden;
+      position: relative;
     }
 
+    /* Navigation styling */
     nav {
+      position: absolute;
+      top: 30px;
+      width: 100%;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: rgba(0, 0, 0, 0.4);
-    }
-
-    nav h1 {
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    nav ul li {
-      cursor: pointer;
-      font-weight: 500;
-    }
-
-    .center {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
+      gap: 40px;
+      z-index: 3;
+    }
+
+    nav a {
+      color: #d4af37;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 12px 25px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      border: 1px solid #d4af3755;
+      letter-spacing: 1px;
+    }
+
+    nav a:hover {
+      background-color: #d4af37;
+      color: #000;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    }
+
+    /* Main content styling */
+    header {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       text-align: center;
-      background: rgba(0, 0, 0, 0.4);
+      z-index: 2;
     }
 
-    .center h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
+    header h1 {
+      font-size: 4vw;
+      font-weight: 700;
+      color: #d4af37;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin: 0;
+      text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
     }
 
-    .get-started {
-      padding: 12px 24px;
-      background: white;
-      color: black;
+    header p {
+      font-size: 1.5vw;
+      color: rgba(212, 175, 55, 0.9);
+      margin-top: 20px;
+    }
+
+    /* Special Get Started button */
+    .cta-button {
+      margin-top: 40px;
+      padding: 18px 50px;
+      background: linear-gradient(45deg, #d4af37 0%, #a8860d 100%);
+      color: #000;
+      font-size: 1.2vw;
+      font-weight: bold;
       border: none;
-      border-radius: 6px;
-      font-size: 16px;
+      border-radius: 50px;
       cursor: pointer;
       transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
     }
 
-    .get-started:hover {
-      background: #f0f0f0;
+    .cta-button:hover {
+      background: #fff;
+      color: #000;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <nav>
-      <h1>Promise Atelier</h1>
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
-    <div class="center">
-      <h2>Welcome to Promise Atelier</h2>
-      <button class="get-started">Get Started</button>
-    </div>
-  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Promise Atelier</h1>
+    <p>Where Creativity Meets Luxury</p>
+    <button class="cta-button">Get Started</button>
+  </header>
 </body>
 </html>
