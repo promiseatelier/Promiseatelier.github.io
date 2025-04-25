@@ -8,22 +8,21 @@
     :root {
       --midnight-blue: #191970;
       --gold: #FFD700;
-      --charcoal-gray: #333333;
-      --navy-blue: #000080;
+      --charcoal-gray: #2F2F2F;
     }
 
     body {
       font-family: 'Playfair Display', serif;
       margin: 0;
       padding: 0;
-      background-color: var(--navy-blue);
+      background: linear-gradient(135deg, #191970, #2F2F2F);
       color: var(--gold);
       position: relative;
       overflow-x: hidden;
     }
 
     header {
-      background: var(--navy-blue);
+      background: var(--midnight-blue);
       padding: 100px 0;
       text-align: center;
       border-bottom: 3px solid var(--gold);
@@ -35,41 +34,19 @@
       margin: 0;
       font-size: 3rem;
       color: var(--gold);
-      animation: glow 1.5s ease-in-out infinite alternate;
+      animation: fadeIn 2s ease-out;
     }
 
-    @keyframes glow {
-      0% {
-        text-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold), 0 0 30px var(--gold);
-      }
-      100% {
-        text-shadow: 0 0 20px var(--gold), 0 0 30px var(--gold), 0 0 40px var(--gold);
-      }
-    }
-
-    .cta-button {
-      display: inline-block;
-      padding: 15px 45px;
-      background: linear-gradient(45deg, var(--gold), #b8860b);
-      color: var(--navy-blue);
-      font-weight: bold;
-      border-radius: 30px;
-      text-decoration: none;
-      margin-top: 30px;
-      transition: all 0.3s ease;
-      border: 2px solid var(--gold);
-    }
-
-    .cta-button:hover {
-      background: var(--gold);
-      color: var(--navy-blue);
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+    /* Remove the "neo" design and revert to a simple glow */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     nav {
       display: flex;
       justify-content: center;
-      background: var(--navy-blue);
+      background: var(--midnight-blue);
       padding: 25px 0;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       position: relative;
@@ -89,13 +66,32 @@
 
     nav a:hover {
       background: var(--gold);
-      color: var(--navy-blue);
+      color: var(--midnight-blue);
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
     }
 
+    .cta-button {
+      display: inline-block;
+      padding: 15px 45px;
+      background: linear-gradient(45deg, var(--gold), #b8860b);
+      color: var(--midnight-blue);
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 30px;
+      transition: all 0.3s ease;
+      border: 2px solid var(--gold);
+    }
+
+    .cta-button:hover {
+      background: var(--gold);
+      color: var(--midnight-blue);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+    }
+
     .luxury-section {
-      background: var(--navy-blue);
+      background: var(--midnight-blue);
       padding: 60px 20px;
       text-align: center;
       color: var(--gold);
@@ -115,57 +111,27 @@
       margin: 0 auto;
     }
 
-    .about-me-section {
-      background: var(--charcoal-gray);
-      color: var(--gold);
-      padding: 80px 20px;
-      text-align: center;
+    /* Engaging background animation */
+    .background-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.3), rgba(0, 0, 0, 0.7));
+      animation: pulseBackground 5s infinite alternate;
+      z-index: -1;
     }
 
-    .about-me-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: var(--gold);
-    }
-
-    .about-me-section p {
-      font-size: 1.2rem;
-      max-width: 900px;
-      margin: 0 auto;
-      line-height: 1.5;
-    }
-
-    .services-section {
-      background: var(--navy-blue);
-      color: var(--gold);
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    .services-section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: var(--gold);
-    }
-
-    .services-list {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 40px;
-    }
-
-    .service-card {
-      background: var(--charcoal-gray);
-      padding: 30px;
-      border-radius: 15px;
-      width: 250px;
-    }
-
-    .service-card h3 {
-      font-size: 1.8rem;
-      color: var(--gold);
-      margin-bottom: 15px;
+    @keyframes pulseBackground {
+      0% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      100% {
+        transform: scale(1.05);
+        opacity: 0.9;
+      }
     }
 
     .pricing-table {
@@ -180,7 +146,7 @@
     }
 
     .package {
-      background: var(--navy-blue);
+      background: var(--midnight-blue);
       padding: 30px;
       border-radius: 15px;
       border: 1px solid var(--gold);
@@ -205,7 +171,7 @@
     .contact-info {
       text-align: center;
       padding: 40px 20px;
-      background: var(--navy-blue);
+      background: var(--midnight-blue);
       margin: 50px 0;
       position: relative;
       z-index: 1;
@@ -217,7 +183,7 @@
     }
 
     footer {
-      background: var(--navy-blue);
+      background: var(--midnight-blue);
       color: var(--gold);
       text-align: center;
       padding: 20px 0;
@@ -227,45 +193,24 @@
   </style>
 </head>
 <body>
+  <!-- Background Animation -->
+  <div class="background-animation"></div>
+
   <header>
     <h1>Welcome to Promise Atelier</h1>
     <p>Your destination for exquisite, handcrafted designs.</p>
-    <a class="cta-button" href="https://wa.me/2348072370300?text=Hello, I would like to schedule a consultation for design services." target="_blank">Schedule Consultation</a>
+    <a class="cta-button" href="https://wa.me/2348072370300?text=Hello%20Promise%20Atelier,%20I'm%20interested%20in%20your%20design%20services!" target="_blank">Schedule Consultation</a>
   </header>
 
   <nav>
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
-    <a href="#about">About Me</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section class="luxury-section" id="services">
     <h2>Our Services</h2>
-    <p>At Promise Atelier, we specialize in creating stunning designs tailored to your business needs. Whether you're looking for eye-catching flyers, unique logos, personalized posters, or professional video editing, we bring your vision to life with elegance and craftsmanship.</p>
-  </section>
-
-  <section class="about-me-section" id="about">
-    <h2>About Me</h2>
-    <p>Greetings! I am a dedicated graphic designer with nearly two years of experience, focused on providing exceptional designs that help my clients stand out. Since my start in 2023, I've worked on various design projects, each allowing me to refine my skills and gain invaluable experience. My passion lies in crafting visuals that are not only aesthetically pleasing but also impactful, ensuring your brand's story is told clearly and beautifully. I am committed to delivering top-quality designs that capture the essence of each project.</p>
-  </section>
-
-  <section class="services-section" id="services">
-    <h2>Services I Offer</h2>
-    <div class="services-list">
-      <div class="service-card">
-        <h3>Flyer Design</h3>
-        <p>Create eye-catching promotional flyers for your business events, sales, and more.</p>
-      </div>
-      <div class="service-card">
-        <h3>Logo Design</h3>
-        <p>Custom logo designs that represent your brand identity with creativity and clarity.</p>
-      </div>
-      <div class="service-card">
-        <h3>Video Editing</h3>
-        <p>Engaging and professional video editing services for various platforms, including YouTube, Instagram, and more.</p>
-      </div>
-    </div>
+    <p>At Promise Atelier, we specialize in creating stunning designs tailored to your business needs. Whether you're looking for eye-catching flyers, unique logos, or personalized posters, we bring your vision to life with elegance and craftsmanship. We also offer professional video editing services to complete your visual identity.</p>
   </section>
 
   <section class="luxury-section" id="pricing">
@@ -273,60 +218,97 @@
     <p>We believe in transparent pricing with no hidden fees. Below are our standard packages:</p>
 
     <div class="pricing-table">
+      <!-- Flyers Pricing -->
       <div class="package">
-        <h3>Flyers - Basic Package</h3>
+        <h3>Flyers</h3>
+        <h4>Basic Package - ₦5,000</h4>
         <ul>
           <li>1 Custom Flyer Design</li>
           <li>Consultation Session</li>
         </ul>
-        <p><strong>₦5,000</strong></p>
-      </div>
-      <div class="package">
-        <h3>Flyers - Premium Package</h3>
+        <h4>Premium Package - ₦10,000</h4>
         <ul>
           <li>2 Custom Flyer Designs</li>
           <li>Priority Consultation</li>
           <li>Editable Source Files</li>
         </ul>
-        <p><strong>₦10,000</strong></p>
       </div>
+      
+      <!-- Posters Pricing -->
       <div class="package">
-        <h3>Logo Design - Basic Package</h3>
+        <h3>Posters</h3>
+        <h4>Basic Package - ₦7,000</h4>
         <ul>
-          <li>1 Custom Logo Design</li>
+          <li>1 Custom Poster Design</li>
           <li>Consultation Session</li>
         </ul>
-        <p><strong>₦8,000</strong></p>
-      </div>
-      <div class="package">
-        <h3>Logo Design - Premium Package</h3>
+        <h4>Premium Package - ₦14,000</h4>
         <ul>
-          <li>2 Logo Designs</li>
+          <li>2 Custom Poster Designs</li>
           <li>Priority Consultation</li>
           <li>Editable Source Files</li>
         </ul>
-        <p><strong>₦15,000</strong></p>
       </div>
+      
+      <!-- Banner Design Pricing -->
       <div class="package">
-        <h3>Video Editing</h3>
+        <h3>Banner Design</h3>
+        <h4>Basic Package - ₦8,000</h4>
         <ul>
-          <li>Custom Video Editing</li>
-          <li>Up to 5 Minutes of Video</li>
-          <li>Enhanced Visual Effects</li>
+          <li>1 Custom Banner Design</li>
+          <li>Consultation Session</li>
         </ul>
-        <p><strong>₦12,000</strong></p>
+        <h4>Premium Package - ₦16,000</h4>
+        <ul>
+          <li>2 Custom Banner Designs</li>
+          <li>Priority Consultation</li>
+          <li>Editable Source Files</li>
+        </ul>
+      </div>
+      
+      <!-- T-Shirt Design Pricing -->
+      <div class="package">
+        <h3>T-Shirts</h3>
+        <h4>Basic Package - ₦6,000</h4>
+        <ul>
+          <li>1 Custom T-Shirt Design</li>
+          <li>Consultation Session</li>
+        </ul>
+        <h4>Premium Package - ₦12,000</h4>
+        <ul>
+          <li>2 Custom T-Shirt Designs</li>
+          <li>Priority Consultation</li>
+          <li>Editable Source Files</li>
+        </ul>
+      </div>
+
+      <!-- Video Pricing -->
+      <div class="package">
+        <h3>Videos</h3>
+        <h4>Long Videos (>2 minutes)</h4>
+        <ul>
+          <li>Basic Package - ₦20,000</li>
+          <li>Premium Package - ₦40,000</li>
+        </ul>
+        <h4>Short Videos (<2 minutes)</h4>
+        <ul>
+          <li>Basic Package - ₦15,000</li>
+          <li>Premium Package - ₦30,000</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <section class="contact-info" id="contact">
     <h2>Contact Us</h2>
-    <p>For inquiries or more information, feel free to reach out via WhatsApp or email.</p>
-    <a href="mailto:info@promiseatelier.com">Email Us</a>
+    <p>For inquiries, please call us at:</p>
+    <p><a href="tel:+2348072370300">0807 237 0300</a></p>
+    <p><a href="tel:+2349162615672">0916 261 5672</a></p>
+    <p>Or email us at: <a href="mailto:promiseatelier1@gmail.com">promiseatelier1@gmail.com</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Promise Atelier. All Rights Reserved.</p>
+    <p>&copy; 2025 Promise Atelier. All rights reserved.</p>
   </footer>
 </body>
-</html>
+  </html>
