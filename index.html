@@ -6,7 +6,6 @@
   <title>PROMISE ATELIER - Luxury Designs</title>
   <style>
     :root {
-      --midnight-blue: #191970;
       --gold: #FFD700;
       --charcoal-gray: #2F2F2F;
     }
@@ -22,7 +21,6 @@
     }
 
     header {
-      background: var(--midnight-blue);
       padding: 100px 0;
       text-align: center;
       border-bottom: 3px solid var(--gold);
@@ -37,7 +35,6 @@
       animation: fadeIn 2s ease-out;
     }
 
-    /* Remove the "neo" design and revert to a simple glow */
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(-20px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -46,7 +43,6 @@
     nav {
       display: flex;
       justify-content: center;
-      background: var(--midnight-blue);
       padding: 25px 0;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       position: relative;
@@ -66,7 +62,7 @@
 
     nav a:hover {
       background: var(--gold);
-      color: var(--midnight-blue);
+      color: #191970;
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
     }
@@ -75,7 +71,7 @@
       display: inline-block;
       padding: 15px 45px;
       background: linear-gradient(45deg, var(--gold), #b8860b);
-      color: var(--midnight-blue);
+      color: #191970;
       font-weight: bold;
       border-radius: 30px;
       text-decoration: none;
@@ -86,12 +82,11 @@
 
     .cta-button:hover {
       background: var(--gold);
-      color: var(--midnight-blue);
+      color: #191970;
       box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
     }
 
     .luxury-section {
-      background: var(--midnight-blue);
       padding: 60px 20px;
       text-align: center;
       color: var(--gold);
@@ -123,7 +118,7 @@
     }
 
     .package {
-      background: var(--midnight-blue);
+      background: rgba(0, 0, 0, 0.7); /* Transparent background */
       padding: 30px;
       border-radius: 15px;
       border: 1px solid var(--gold);
@@ -148,7 +143,6 @@
     .contact-info {
       text-align: center;
       padding: 40px 20px;
-      background: var(--midnight-blue);
       margin: 50px 0;
       position: relative;
       z-index: 1;
@@ -160,7 +154,6 @@
     }
 
     footer {
-      background: var(--midnight-blue);
       color: var(--gold);
       text-align: center;
       padding: 20px 0;
