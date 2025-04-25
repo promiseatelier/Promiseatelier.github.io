@@ -3,25 +3,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PROMISE ATELIER - Luxury Designs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --charcoal-gray: #36454F;
-      --navy-blue: #000080;
+      --charcoal: #2c2c2c;
+      --navy: #001f3f;
       --gold: #FFD700;
-      --text-light: rgba(255, 255, 255, 0.9);
     }body {
   font-family: 'Playfair Display', serif;
   margin: 0;
   padding: 0;
-  background-color: var(--charcoal-gray);
-  color: var(--text-light);
-  position: relative;
+  background: linear-gradient(to bottom right, var(--charcoal), var(--navy));
+  color: var(--gold);
   overflow-x: hidden;
 }
 
 header {
-  background: var(--navy-blue);
-  padding: 80px 0;
+  background: var(--navy);
+  padding: 100px 0;
   text-align: center;
   border-bottom: 3px solid var(--gold);
 }
@@ -32,45 +31,21 @@ header h1 {
   color: var(--gold);
 }
 
-header p {
-  color: var(--text-light);
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 15px 45px;
-  background: var(--gold);
-  color: var(--navy-blue);
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  margin-top: 30px;
-  transition: all 0.3s ease;
-  border: 2px solid var(--gold);
-}
-
-.cta-button:hover {
-  background: transparent;
-  color: var(--gold);
-  border-color: var(--text-light);
-}
-
 nav {
   display: flex;
   justify-content: center;
-  background: var(--navy-blue);
-  padding: 20px 0;
+  background: var(--navy);
+  padding: 25px 0;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 nav a {
   color: var(--gold);
   text-decoration: none;
-  margin: 0 25px;
-  font-size: 1.1rem;
-  padding: 10px 20px;
+  margin: 0 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  padding: 12px 25px;
   border: 2px solid var(--gold);
   border-radius: 30px;
   transition: all 0.3s ease;
@@ -78,45 +53,73 @@ nav a {
 
 nav a:hover {
   background: var(--gold);
-  color: var(--navy-blue);
-  transform: translateY(-2px);
+  color: var(--navy);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 15px 45px;
+  background: linear-gradient(45deg, var(--gold), #b8860b);
+  color: var(--navy);
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+  border: 2px solid var(--gold);
+  animation: pulse 2s infinite;
+}
+
+.cta-button:hover {
+  background: var(--gold);
+  color: var(--navy);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 .luxury-section {
-  background: var(--charcoal-gray);
+  background: url('https://www.transparenttextures.com/patterns/black-linen.png'), var(--charcoal);
+  background-blend-mode: overlay;
   padding: 60px 20px;
   text-align: center;
 }
 
 .luxury-section h2 {
   font-size: 2.5rem;
-  color: var(--gold);
   margin-bottom: 20px;
+  color: var(--gold);
 }
 
 .luxury-section p {
-  font-size: 1.1rem;
-  color: var(--text-light);
+  font-size: 1.2rem;
   max-width: 800px;
   margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .pricing-table {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: 30px;
   margin: 50px 0;
   padding: 0 20px;
 }
 
 .package {
-  background: var(--navy-blue);
+  background: var(--navy);
   padding: 30px;
   border-radius: 15px;
-  border: 2px solid var(--gold);
-  width: 300px;
-  text-align: center;
+  border: 1px solid var(--gold);
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
 }
 
 .package h3 {
@@ -127,36 +130,28 @@ nav a:hover {
 .package ul {
   list-style: none;
   padding: 0;
-  color: var(--text-light);
-  margin: 20px 0;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .package ul li {
   margin: 10px 0;
 }
 
-.package p strong {
-  color: var(--gold);
-  font-size: 1.2rem;
-}
-
 .contact-info {
   text-align: center;
   padding: 40px 20px;
-  background: var(--charcoal-gray);
-  color: var(--text-light);
+  background: var(--navy);
   margin: 50px 0;
 }
 
 .contact-info a {
   color: var(--gold);
-  text-decoration: none;
-  font-weight: bold;
+  text-decoration: underline;
 }
 
 footer {
-  background: var(--navy-blue);
-  color: var(--text-light);
+  background: var(--charcoal);
+  color: var(--gold);
   text-align: center;
   padding: 20px 0;
 }
@@ -174,34 +169,85 @@ footer {
     <a href="#contact">Contact</a>
   </nav>  <section class="luxury-section" id="services">
     <h2>Our Services</h2>
-    <p>At Promise Atelier, we specialize in stunning business flyers, unique logos for your brand, and eye-catching posters tailored to your vision.</p>
+    <p>At Promise Atelier, we specialize in creating stunning designs tailored to your business needs. Whether you're looking for eye-catching flyers, unique logos, or personalized posters, we bring your vision to life with elegance and craftsmanship.</p>
   </section>  <section class="luxury-section" id="pricing">
     <h2>Pricing</h2>
-    <p>We believe in transparent pricing with no hidden fees. Choose your package:</p><div class="pricing-table">
+    <p>We believe in transparent pricing with no hidden fees. Below are our standard packages:</p><div class="pricing-table">
   <div class="package">
-    <h3>Basic Package</h3>
+    <h3>Flyers</h3>
     <ul>
-      <li>1 Custom Design</li>
+      <li><strong>Basic Package:</strong> ₦5,000</li>
+      <li>1 Custom Flyer Design</li>
       <li>Consultation Session</li>
     </ul>
-    <p><strong>₦5,000</strong></p>
+    <ul>
+      <li><strong>Premium Package:</strong> ₦10,000</li>
+      <li>2 Custom Flyer Designs</li>
+      <li>Priority Consultation</li>
+      <li>Editable Source Files</li>
+    </ul>
   </div>
   <div class="package">
-    <h3>Premium Package</h3>
+    <h3>Posters</h3>
     <ul>
-      <li>2 Custom Designs</li>
-      <li>Video Editing</li>
-      <li>Priority Consultation</li>
+      <li><strong>Basic Package:</strong> ₦7,000</li>
+      <li>1 Custom Poster Design</li>
+      <li>Consultation Session</li>
     </ul>
-    <p><strong>₦10,000</strong></p>
+    <ul>
+      <li><strong>Premium Package:</strong> ₦14,000</li>
+      <li>2 Custom Poster Designs</li>
+      <li>Priority Consultation</li>
+      <li>Editable Source Files</li>
+    </ul>
+  </div>
+  <div class="package">
+    <h3>Banner Design</h3>
+    <ul>
+      <li><strong>Basic Package:</strong> ₦8,000</li>
+      <li>1 Custom Banner Design</li>
+      <li>Consultation Session</li>
+    </ul>
+    <ul>
+      <li><strong>Premium Package:</strong> ₦16,000</li>
+      <li>2 Custom Banner Designs</li>
+      <li>Priority Consultation</li>
+      <li>Editable Source Files</li>
+    </ul>
+  </div>
+  <div class="package">
+    <h3>T-Shirts</h3>
+    <ul>
+      <li><strong>Basic Package:</strong> ₦6,000</li>
+      <li>1 Custom T-Shirt Design</li>
+      <li>Consultation Session</li>
+    </ul>
+    <ul>
+      <li><strong>Premium Package:</strong> ₦12,000</li>
+      <li>2 Custom T-Shirt Designs</li>
+      <li>Priority Consultation</li>
+      <li>Editable Source Files</li>
+    </ul>
+  </div>
+  <div class="package">
+    <h3>Videos</h3>
+    <ul>
+      <li><strong>Long Videos (>2 mins)</strong></li>
+      <li><strong>Basic:</strong> ₦20,000 – 1 Custom Video + Consultation</li>
+      <li><strong>Premium:</strong> ₦40,000 – Advanced Editing + Priority Consultation</li>
+    </ul>
+    <ul>
+      <li><strong>Short Videos (<2 mins)</strong></li>
+      <li><strong>Basic:</strong> ₦15,000 – 1 Custom Video + Consultation</li>
+      <li><strong>Premium:</strong> ₦30,000 – Advanced Editing + Priority Consultation</li>
+    </ul>
   </div>
 </div>
 
   </section>  <section class="contact-info" id="contact">
     <h2>Contact Us</h2>
-    <p>📞 <a href="tel:08072370300">08072370300</a> | <a href="tel:09162615672">09162615672</a></p>
-    <p>📧 <a href="mailto:promiseatelier1@gmail.com?subject=Design%20Services%20Inquiry&body=Hello%20Promise%20Atelier%2C%20I'm%20interested%20in%20your%20design%20services!">promiseatelier1@gmail.com</a></p>
-    <p>💰 Payment Method: Bank transfers only.</p>
+    <p>Phone: 08072370300, 09162615672</p>
+    <p>Email: <a href="mailto:promiseatelier1@gmail.com">promiseatelier1@gmail.com</a></p>
   </section>  <footer>
     <p>&copy; 2025 Promise Atelier. All rights reserved.</p>
   </footer>
