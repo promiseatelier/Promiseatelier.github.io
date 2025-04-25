@@ -1,137 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Promise Atelier</title>
-  <style>
-    /* Full-screen background video for purple light paint effect */
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      overflow: hidden;
-      font-family: 'Arial', sans-serif;
-      color: #fff;
-      position: relative;
-    }
-
-    /* Full-screen background video */
-    .background-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1; /* Ensure it stays behind the content */
-    }
-
-    /* Container for header and the name beside animation */
-    .content-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      z-index: 1;
-      position: relative;
-    }
-
-    /* Styling for the name "Promise Atelier" beside the animation */
-    .brand-name {
-      color: #d4af37;
-      font-size: 80px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-left: 50px;
-      text-shadow: 0 0 20px rgba(125, 91, 163, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Navigation styling */
-    nav {
-      position: absolute;
-      top: 20px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 40px;
-      box-sizing: border-box;
-      z-index: 2;
-    }
-
-    nav a {
-      color: #d4af37;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 600;
-      padding: 12px 25px;
-      background: rgba(0, 0, 0, 0.7);
-      border-radius: 30px;
-      transition: all 0.3s ease;
-      border: 1px solid #7d5ba355;
-    }
-
-    nav a:hover {
-      background: #7d5ba3;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(125, 91, 163, 0.4);
-    }
-
-    /* Get Started Button Styling */
-    .cta-button {
-      margin-top: 30px;
-      padding: 20px 40px;
-      background-color: #d4af37;
-      color: #000;
-      font-size: 22px;
-      font-weight: 700;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.4s ease;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .cta-button:hover {
-      background-color: #222;
-      color: #fff;
-      transform: translateY(-5px);
-      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Promise Atelier</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+    <header>
+        <h1>Welcome to Promise Atelier</h1>
+        <button class="request-quote">Request Quote</button>
+    </header>
 
-  <!-- Background video for purple light paint effect -->
-  <video class="background-video" autoplay muted loop>
-    <source src="https://example.com/purple-light-paint-splash.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+    <main>
+        <section class="content">
+            <h2>Our Services</h2>
+            <p>Explore our creative designs and more!</p>
+        </section>
+    </main>
 
-  <!-- Content container to position brand name beside the animation -->
-  <div class="content-container">
-    <!-- Brand name -->
-    <div class="brand-name">
-      <h1>Promise Atelier</h1>
-    </div>
-
-    <!-- Get Started Button -->
-    <button class="cta-button">Get Started</button>
-  </div>
-
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-group">
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>
