@@ -6,21 +6,28 @@
   <title>Contact | Promise Atelier</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Form and input styles */
     form {
       max-width: 600px;
       margin: auto;
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
+
     input, textarea {
       padding: 12px;
       font-size: 16px;
       border-radius: 8px;
       border: 1px solid #ccc;
     }
+
     button {
-      background: #000;
+      background: #d4af37;
       color: #fff;
       padding: 12px;
       font-weight: bold;
@@ -28,9 +35,41 @@
       border-radius: 8px;
       cursor: pointer;
     }
+
     button:hover {
-      background: #d4af37;
-      color: #000;
+      background: #222;
+      color: #fff;
+    }
+
+    /* Background Pattern */
+    body {
+      background: url('https://via.placeholder.com/1920x1080.png?text=Pattern') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    header, footer {
+      background: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .section {
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    a {
+      color: #d4af37;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #fff;
     }
   </style>
 </head>
@@ -39,6 +78,7 @@
     <h1>Contact Us</h1>
     <p>We’d love to bring your brand vision to life</p>
   </header>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -46,6 +86,7 @@
     <a href="portfolio.html">Portfolio</a>
     <a href="contact.html">Contact</a>
   </nav>
+
   <section class="section">
     <h2>Reach Out</h2>
     <form action="mailto:contact@promiseatelier.com" method="POST" enctype="text/plain">
@@ -56,6 +97,7 @@
     </form>
     <p>Or contact us via WhatsApp: <a href="https://wa.me/2348012345678">+234 801 234 5678</a></p>
   </section>
+
   <footer>
     <p>&copy; 2025 Promise Atelier. All rights reserved.</p>
   </footer>
