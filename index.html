@@ -6,29 +6,25 @@
   <title>PROMISE ATELIER - Luxury Designs</title>
   <style>
     :root {
-      --champagne-gold: #D4AF37;
-      --soft-lavender: #B497BD;
-      --peach-blush: #F7D1C4;
-      --mint-green: #A8D5BA;
-      --creamy-ivory: #FAF3DD;
-      --text-light: rgba(255, 255, 255, 0.9);
+      --midnight-blue: #191970;
+      --gold: #FFD700;
     }
 
     body {
       font-family: 'Playfair Display', serif;
       margin: 0;
       padding: 0;
-      background-color: var(--peach-blush);
-      color: var(--creamy-ivory);
+      background-color: var(--midnight-blue);
+      color: var(--gold);
       position: relative;
       overflow-x: hidden;
     }
 
     header {
-      background: var(--soft-lavender);
+      background: var(--midnight-blue);
       padding: 100px 0;
       text-align: center;
-      border-bottom: 3px solid var(--champagne-gold);
+      border-bottom: 3px solid var(--gold);
       position: relative;
       z-index: 1;
     }
@@ -36,13 +32,13 @@
     header h1 {
       margin: 0;
       font-size: 3rem;
-      color: var(--champagne-gold);
+      color: var(--gold);
     }
 
     nav {
       display: flex;
       justify-content: center;
-      background: var(--soft-lavender);
+      background: var(--midnight-blue);
       padding: 25px 0;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       position: relative;
@@ -50,47 +46,47 @@
     }
 
     nav a {
-      color: var(--champagne-gold);
+      color: var(--gold);
       text-decoration: none;
       margin: 0 30px;
       font-size: 1.2rem;
       padding: 12px 25px;
-      border: 2px solid var(--champagne-gold);
+      border: 2px solid var(--gold);
       border-radius: 30px;
       transition: all 0.3s ease;
     }
 
     nav a:hover {
-      background: var(--champagne-gold);
-      color: var(--soft-lavender);
+      background: var(--gold);
+      color: var(--midnight-blue);
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
     }
 
     .cta-button {
       display: inline-block;
       padding: 15px 45px;
-      background: linear-gradient(45deg, var(--champagne-gold), #a8860d);
-      color: #000;
+      background: linear-gradient(45deg, var(--gold), #b8860b);
+      color: var(--midnight-blue);
       font-weight: bold;
       border-radius: 30px;
       text-decoration: none;
       margin-top: 30px;
       transition: all 0.3s ease;
-      border: 2px solid var(--champagne-gold);
+      border: 2px solid var(--gold);
     }
 
     .cta-button:hover {
-      background: var(--champagne-gold);
-      color: #000;
-      box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+      background: var(--gold);
+      color: var(--midnight-blue);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
     }
 
     .luxury-section {
-      background: var(--peach-blush);
+      background: var(--midnight-blue);
       padding: 60px 20px;
       text-align: center;
-      color: var(--creamy-ivory);
+      color: var(--gold);
       position: relative;
       z-index: 1;
     }
@@ -98,7 +94,7 @@
     .luxury-section h2 {
       font-size: 2.5rem;
       margin-bottom: 20px;
-      color: var(--champagne-gold);
+      color: var(--gold);
     }
 
     .luxury-section p {
@@ -119,22 +115,22 @@
     }
 
     .package {
-      background: var(--soft-lavender);
+      background: var(--midnight-blue);
       padding: 30px;
       border-radius: 15px;
-      border: 1px solid var(--champagne-gold);
+      border: 1px solid var(--gold);
       width: 300px;
     }
 
     .package h3 {
       margin-top: 0;
-      color: var(--champagne-gold);
+      color: var(--gold);
     }
 
     .package ul {
       list-style: none;
       padding: 0;
-      color: #fff;
+      color: var(--gold);
     }
 
     .package ul li {
@@ -144,20 +140,20 @@
     .contact-info {
       text-align: center;
       padding: 40px 20px;
-      background: var(--soft-lavender);
+      background: var(--midnight-blue);
       margin: 50px 0;
       position: relative;
       z-index: 1;
     }
 
     .contact-info a {
-      color: var(--champagne-gold);
+      color: var(--gold);
       text-decoration: underline;
     }
 
     footer {
-      background: var(--mint-green);
-      color: var(--creamy-ivory);
+      background: var(--midnight-blue);
+      color: var(--gold);
       text-align: center;
       padding: 20px 0;
       position: relative;
@@ -169,6 +165,7 @@
   <header>
     <h1>Welcome to Promise Atelier</h1>
     <p>Your destination for exquisite, handcrafted designs.</p>
+    <a class="cta-button" href="https://wa.me/2348072370300" target="_blank">Schedule Consultation</a>
   </header>
 
   <nav>
@@ -179,7 +176,7 @@
 
   <section class="luxury-section" id="services">
     <h2>Our Services</h2>
-    <p>At Promise Atelier, we offer bespoke design solutions tailored to your unique style and needs. Whether you're looking for custom fashion pieces, home décor, or personalized gifts, we bring your vision to life with elegance and craftsmanship.</p>
+    <p>At Promise Atelier, we specialize in creating stunning designs tailored to your business needs. Whether you're looking for eye-catching flyers, unique logos, or personalized posters, we bring your vision to life with elegance and craftsmanship.</p>
   </section>
 
   <section class="luxury-section" id="pricing">
@@ -194,7 +191,7 @@
           <li>Consultation Session</li>
           <li>Delivery Included</li>
         </ul>
-        <p><strong>₦50,000</strong></p>
+        <p><strong>₦5,000</strong></p>
       </div>
       <div class="package">
         <h3>Premium Package</h3>
@@ -203,4 +200,7 @@
           <li>Priority Consultation</li>
           <li>Express Delivery</li>
         </ul>
-        <p><strong>₦120,0000
+        <p><strong>₦10,000</strong></p>
+      </div>
+    </div>
+ 17
