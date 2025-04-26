@@ -4,8 +4,10 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden; /* Ensure no scrollbars */
 }
 
+/* Navigation bar */
 nav {
   position: absolute;
   top: 20px;
@@ -27,6 +29,7 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .overlay {
@@ -39,7 +42,8 @@ nav a {
   font-size: 5rem;
   font-weight: bold;
   letter-spacing: 2px;
-  animation: fadeIn 2s ease-out;
+  color: #FFD700; /* Golden color */
+  animation: fadeIn 2s ease-out; /* Fade in effect */
 }
 
 .tagline {
@@ -64,15 +68,14 @@ nav a {
   background-color: #FFB300;
 }
 
-/* Wave Animation */
+/* Liquid Flow Animation */
 .wave-animation {
   position: absolute;
-  bottom: 0;
+  bottom: -150px;  /* Start position outside of viewport */
   width: 100%;
   height: 150px;
-  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/waves.svg') no-repeat center center;
-  background-size: cover;
-  animation: waveMove 10s ease-in-out infinite;
+  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/waves.svg') repeat-x;
+  animation: waveMove 20s linear infinite;  /* Slowed down for calm river effect */
   z-index: 1;
 }
 
@@ -80,11 +83,57 @@ nav a {
   0% {
     transform: translateX(0);
   }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Particles / Sparkles Animation */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.particles::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: transparent;
+  animation: fallingParticles 10s infinite linear;
+}
+
+.particles::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 1px;
+  height: 100%;
+  background: transparent;
+  animation: fallingParticles 12s infinite linear;
+}
+
+@keyframes fallingParticles {
+  0% {
+    transform: translateY(-100%) scale(0.5);
+    opacity: 0.7;
+  }
   50% {
-    transform: translateX(-50%);
+    transform: translateY(50vh) scale(1.2);
+    opacity: 0.9;
   }
   100% {
-    transform: translateX(0);
+    transform: translateY(100%) scale(1);
+    opacity: 0;
   }
 }
 
