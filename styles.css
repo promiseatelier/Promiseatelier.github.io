@@ -5,12 +5,12 @@
   box-sizing: border-box;
 }
 
-/* Body with background image */
+/* Body */
 body {
-  font-family: 'Poppins', sans-serif;
-  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg') no-repeat center center/cover;
-  color: white;
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #fff;
 }
 
 /* Navigation Styling */
@@ -19,7 +19,7 @@ nav {
   padding: 1rem 2rem;
   display: flex;
   justify-content: center;
-  gap: 3rem; /* Space between links */
+  gap: 5rem; /* Space between links */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -29,9 +29,9 @@ nav a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  font-size: 1.3rem;
+  padding: 0.5rem 1.5rem; /* Extra padding around the text */
+  border-radius: 10px;
   transition: all 0.3s ease;
 }
 
@@ -43,62 +43,93 @@ nav a:hover {
 /* Hero Section */
 .hero {
   position: relative;
-  width: 100%;
   height: 100vh;
+  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg') center center / cover no-repeat;
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
 }
 
-/* Overlay for semi-transparent background behind text */
-.overlay {
-  background: rgba(0, 0, 64, 0.5); /* More transparent Midnight Blue */
-  padding: 2rem 4rem;
-  border-radius: 16px;
+/* Overlay for Hero Section */
+.hero .overlay {
+  background: rgba(0, 0, 64, 0.5); /* Transparent navy blue background */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
 }
 
-/* Brand (A&P ATELIER) Fade In */
+/* Brand Name - A&P ATELIER */
 .brand {
   font-size: 3rem;
-  font-weight: 800;
   color: gold;
-  animation: fadeIn 2s ease forwards;
-  opacity: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 5px;
+  animation: fadeIn 3s ease-in-out forwards;
 }
 
-/* Tagline */
+/* Tagline Under the Brand Name */
 .tagline {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.2rem;
+  color: #fff;
+  margin-top: 20px;
 }
 
-/* Call To Action Button */
+/* Call to Action Button */
 .cta {
   display: inline-block;
-  margin-top: 2rem;
-  padding: 0.75rem 2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: white;
-  background-color: rgba(0, 0, 128, 0.7); /* Slightly darker blue */
-  border: 2px solid gold;
-  border-radius: 30px;
+  background-color: gold;
+  padding: 15px 25px;
+  color: #000;
+  font-size: 1.1rem;
   text-decoration: none;
-  transition: background 0.3s, transform 0.3s;
+  border-radius: 5px;
+  margin-top: 30px;
+  transition: all 0.3s ease;
 }
 
 .cta:hover {
-  background-color: gold;
-  color: midnightblue;
-  transform: scale(1.05);
+  background-color: rgba(255, 215, 0, 0.8);
+  color: white;
 }
 
-/* Fade In Animation */
+/* Fade-in Animation for Brand Name */
 @keyframes fadeIn {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero {
+    height: 80vh;
+  }
+
+  .brand {
+    font-size: 2rem;
+  }
+
+  .cta {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+  }
