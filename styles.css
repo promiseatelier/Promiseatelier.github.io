@@ -1,0 +1,86 @@
+/* Main Body */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(25, 25, 112, 0.85); /* Less transparent midnight blue */
+  padding: 15px;
+}
+
+nav a {
+  color: gold;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  background: rgba(25, 25, 112, 0.4); /* Transparent navy blue */
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background: rgba(25, 25, 112, 0.7);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay {
+  background: rgba(25, 25, 112, 0.4); /* Transparent background behind text */
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.brand {
+  font-size: 3rem;
+  color: gold;
+  margin: 0;
+}
+
+.tagline {
+  color: white;
+  font-size: 1.3rem;
+  margin: 10px 0;
+}
+
+.cta {
+  margin-top: 20px;
+  display: inline-block;
+  background: gold;
+  color: navy;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta:hover {
+  background: #ffd700;
+}
+
+/* Fade-in Animation */
+.fade-in {
+  animation: fadeIn 2s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
