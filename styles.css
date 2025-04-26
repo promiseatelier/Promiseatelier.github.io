@@ -1,86 +1,100 @@
-/* Main Body */
+/* Base styles for the page */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg') no-repeat center center/cover;
-  background-attachment: fixed;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Navigation */
 nav {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  background: rgba(25, 25, 112, 0.85); /* Less transparent midnight blue */
-  padding: 15px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
 }
 
 nav a {
-  color: gold;
+  color: white;
   text-decoration: none;
+  margin-right: 20px;
   font-weight: bold;
-  padding: 8px 16px;
-  background: rgba(25, 25, 112, 0.4); /* Transparent navy blue */
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-
-nav a:hover {
-  background: rgba(25, 25, 112, 0.7);
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  height: 90vh;
+  height: 100vh;
+  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 }
 
 .overlay {
-  background: rgba(25, 25, 112, 0.4); /* Transparent background behind text */
-  padding: 40px;
-  border-radius: 15px;
+  text-align: center;
+  color: white;
+  z-index: 2;
 }
 
 .brand {
-  font-size: 3rem;
-  color: gold;
-  margin: 0;
+  font-size: 5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: fadeIn 2s ease-out;
 }
 
 .tagline {
-  color: white;
-  font-size: 1.3rem;
-  margin: 10px 0;
+  font-size: 1.5rem;
+  margin-top: 20px;
 }
 
 .cta {
-  margin-top: 20px;
   display: inline-block;
-  background: gold;
-  color: navy;
-  padding: 12px 24px;
-  border-radius: 8px;
+  background-color: #FFD700;
+  color: black;
+  padding: 15px 30px;
+  margin-top: 20px;
+  font-size: 1.2rem;
   text-decoration: none;
+  border-radius: 5px;
   font-weight: bold;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .cta:hover {
-  background: #ffd700;
+  background-color: #FFB300;
 }
 
-/* Fade-in Animation */
-.fade-in {
-  animation: fadeIn 2s ease-in-out forwards;
-  opacity: 0;
+/* Wave Animation */
+.wave-animation {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/waves.svg') no-repeat center center;
+  background-size: cover;
+  animation: waveMove 10s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeIn {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
