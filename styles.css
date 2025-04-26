@@ -1,74 +1,23 @@
+/* Basic Reset */
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #000;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
-.hero {
-  position: relative;
-  height: 100vh;
-  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg') no-repeat center center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  z-index: 1;
-}
-
-.overlay {
-  position: relative;
-  background-color: rgba(0, 0, 64, 0.5); /* transparent midnight blue */
-  padding: 50px;
-  border-radius: 15px;
-  z-index: 2;
-}
-
-.brand {
-  font-size: 3rem;
-  font-weight: bold;
-  color: gold;
-  animation: fadeIn 2s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.tagline {
-  font-size: 1.2rem;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-.cta {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: gold;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
-
-.cta:hover {
-  background-color: #ffd700;
-}
-
-/* Navigation Styling */
+/* Navigation Bar */
 nav {
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 3;
+  z-index: 10;
 }
 
 nav a {
-  background-color: rgba(25, 25, 112, 0.85);
+  background-color: rgba(25, 25, 112, 0.9); /* Midnight blue */
   color: white;
   padding: 10px 20px;
   margin: 0 5px;
@@ -78,35 +27,95 @@ nav a {
 }
 
 nav a:hover {
-  background-color: rgba(25, 25, 112, 1);
+  background-color: rgba(0, 0, 128, 1);
 }
 
-/* Background Effects */
-.wave-bg {
-  position: absolute;
+/* Hero Section */
+.hero {
+  position: relative;
   width: 100%;
-  height: 100%;
-  background: url('https://i.gifer.com/ZZ5H.gif') center/cover no-repeat;
-  opacity: 0.3;
-  z-index: 0;
-  animation: riverFlow 20s linear infinite;
+  height: 100vh;
+  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg') center center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-@keyframes riverFlow {
-  0% { background-position: 0 0; }
-  100% { background-position: 100% 0; }
+.overlay {
+  position: relative;
+  background: rgba(0, 0, 64, 0.5); /* Transparent midnight blue */
+  padding: 50px;
+  border-radius: 20px;
+  z-index: 3;
 }
 
+.brand {
+  font-size: 3rem;
+  color: gold;
+  font-weight: bold;
+  animation: fadeIn 3s ease-in-out forwards;
+  opacity: 0;
+}
+
+.tagline {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+/* Call to Action Button */
+.cta {
+  padding: 12px 25px;
+  background-color: gold;
+  color: #000;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #ffd700;
+}
+
+/* Liquid Wave Background */
+.wave {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0,0,128,0.4) 20%, transparent 70%);
+  animation: wave 10s infinite linear;
+  opacity: 0.4;
+  z-index: 1;
+}
+
+@keyframes wave {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Sparkle Particles */
 .particles {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: url('https://i.gifer.com/fxEy.gif') center/cover no-repeat;
-  opacity: 0.2;
-  animation: sparkle 4s infinite linear;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.1;
+  animation: sparkle 4s infinite alternate;
+  z-index: 2;
 }
 
 @keyframes sparkle {
-  0%, 100% { opacity: 0.2; }
-  50% { opacity: 0.4; }
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+/* Fade-in Effect */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
