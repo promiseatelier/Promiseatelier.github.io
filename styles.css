@@ -1,77 +1,104 @@
-body, html {
+/* General Reset */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-  height: 100%;
+  box-sizing: border-box;
 }
 
+/* Body with background image */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg') no-repeat center center/cover;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Navigation Styling */
 nav {
-  background: rgba(0, 0, 64, 0.8); /* Midnight blue */
-  padding: 1rem;
+  background: rgba(0, 0, 64, 0.8); /* Midnight Blue */
+  padding: 1rem 2rem;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem; /* Space between links */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
   color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
   color: gold;
+  background: rgba(255, 215, 0, 0.1);
 }
 
+/* Hero Section */
 .hero {
   position: relative;
+  width: 100%;
   height: 100vh;
-  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
+/* Overlay for semi-transparent background behind text */
 .overlay {
-  background: rgba(0, 0, 64, 0.5); /* Transparent midnight blue */
-  padding: 2rem;
-  border-radius: 20px;
+  background: rgba(0, 0, 64, 0.5); /* More transparent Midnight Blue */
+  padding: 2rem 4rem;
+  border-radius: 16px;
 }
 
+/* Brand (A&P ATELIER) Fade In */
 .brand {
-  font-size: 4rem;
-  font-weight: 900;
-  background: linear-gradient(45deg, gold, #ffd700);
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: fadeIn 2s ease-in-out forwards;
+  font-size: 3rem;
+  font-weight: 800;
+  color: gold;
+  animation: fadeIn 2s ease forwards;
   opacity: 0;
 }
 
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
+/* Tagline */
 .tagline {
+  margin-top: 1rem;
   font-size: 1.5rem;
-  margin: 1rem 0;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
 }
 
+/* Call To Action Button */
 .cta {
-  background: gold;
-  color: black;
-  padding: 1rem 2rem;
-  text-decoration: none;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  border-radius: 10px;
-  transition: background 0.3s ease;
+  color: white;
+  background-color: rgba(0, 0, 128, 0.7); /* Slightly darker blue */
+  border: 2px solid gold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .cta:hover {
-  background: darkorange;
+  background-color: gold;
+  color: midnightblue;
+  transform: scale(1.05);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
