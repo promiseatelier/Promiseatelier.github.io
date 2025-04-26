@@ -1,291 +1,304 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PROMISE ATELIER - Luxury Designs</title>
   <style>
     :root {
+      --midnight-blue: #191970;
       --gold: #FFD700;
-    }body {
-  margin: 0;
-  padding: 0;
-  background-image: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: var(--gold);
-}
+      --charcoal-gray: #2F2F2F;
+    }
 
-.fluid-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.03), transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.03), transparent 50%);
-  animation: moveFluid 10s infinite linear;
-  z-index: 0;
-  pointer-events: none;
-}
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
 
-@keyframes moveFluid {
-  0% {
-    background-position: 0% 0%, 100% 100%;
-  }
-  100% {
-    background-position: 100% 100%, 0% 0%;
-  }
-}
+    header {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 100px 0;
+      text-align: center;
+      border-bottom: 3px solid var(--gold);
+      position: relative;
+      z-index: 1;
+    }
 
-header {
-  background: transparent;
-  padding: 100px 0;
-  text-align: center;
-  border-bottom: 3px solid var(--gold);
-  position: relative;
-  z-index: 1;
-}
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      color: var(--gold);
+      animation: fadeIn 2s ease-out;
+    }
 
-header h1 {
-  margin: 0;
-  font-size: 3rem;
-  color: var(--gold);
-  animation: fadeIn 2s ease-out;
-}
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
 
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
+    nav {
+      display: flex;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 25px 0;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 1;
+    }
 
-nav {
-  display: flex;
-  justify-content: center;
-  background: rgba(25, 25, 112, 0.8);
-  padding: 25px 0;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 1;
-}
+    nav a {
+      color: var(--gold);
+      text-decoration: none;
+      margin: 0 30px;
+      font-size: 1.2rem;
+      padding: 12px 25px;
+      border: 2px solid var(--gold);
+      border-radius: 30px;
+      transition: all 0.3s ease;
+    }
 
-nav a {
-  color: var(--gold);
-  text-decoration: none;
-  margin: 0 30px;
-  font-size: 1.2rem;
-  padding: 12px 25px;
-  border: 2px solid var(--gold);
-  border-radius: 30px;
-  transition: all 0.3s ease;
-}
+    nav a:hover {
+      background: var(--gold);
+      color: var(--midnight-blue);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    }
 
-nav a:hover {
-  background: var(--gold);
-  color: black;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-}
+    .cta-button {
+      display: inline-block;
+      padding: 15px 45px;
+      background: linear-gradient(45deg, var(--gold), #b8860b);
+      color: var(--midnight-blue);
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 30px;
+      transition: all 0.3s ease;
+      border: 2px solid var(--gold);
+    }
 
-.cta-button {
-  display: inline-block;
-  padding: 15px 45px;
-  background: linear-gradient(45deg, var(--gold), #b8860b);
-  color: black;
-  font-weight: bold;
-  border-radius: 30px;
-  text-decoration: none;
-  margin-top: 30px;
-  transition: all 0.3s ease;
-  border: 2px solid var(--gold);
-  z-index: 1;
-}
+    .cta-button:hover {
+      background: var(--gold);
+      color: var(--midnight-blue);
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+    }
 
-.cta-button:hover {
-  background: var(--gold);
-  color: black;
-  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
-}
+    .luxury-section,
+    .about-section,
+    .pricing-table,
+    .contact-info {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 60px 20px;
+      text-align: center;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+    }
 
-.luxury-section {
-  background: transparent;
-  padding: 60px 20px;
-  text-align: center;
-  color: var(--gold);
-  position: relative;
-  z-index: 1;
-}
+    .luxury-section h2,
+    .about-section h2,
+    .pricing-table h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--gold);
+    }
 
-.luxury-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: var(--gold);
-}
+    .luxury-section p,
+    .about-section p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
 
-.luxury-section p {
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
+    .pricing-table {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin: 50px 0;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
 
-.pricing-table {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin: 50px 0;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;
-}
+    .package {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      border-radius: 15px;
+      border: 1px solid var(--gold);
+      width: 300px;
+    }
 
-.package {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 30px;
-  border-radius: 15px;
-  border: 1px solid var(--gold);
-  width: 300px;
-}
+    .package h3 {
+      margin-top: 0;
+      color: var(--gold);
+    }
 
-.package h3,
-.package h4,
-.package ul li {
-  color: var(--gold);
-}
+    .package ul {
+      list-style: none;
+      padding: 0;
+      color: var(--gold);
+    }
 
-.package ul {
-  list-style: none;
-  padding: 0;
-}
+    .package ul li {
+      margin: 10px 0;
+    }
 
-.contact-info {
-  text-align: center;
-  padding: 40px 20px;
-  background: transparent;
-  margin: 50px 0;
-  position: relative;
-  z-index: 1;
-}
+    .contact-info {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.4);
+      margin: 50px 0;
+      position: relative;
+      z-index: 1;
+    }
 
-.contact-info a {
-  color: var(--gold);
-  text-decoration: underline;
-}
+    .contact-info a {
+      color: var(--gold);
+      text-decoration: underline;
+    }
 
-footer {
-  background: transparent;
-  color: var(--gold);
-  text-align: center;
-  padding: 20px 0;
-  position: relative;
-  z-index: 1;
-}
+    footer {
+      background: rgba(0, 0, 0, 0.4);
+      color: var(--gold);
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      z-index: 1;
+    }
 
+    .about-section h2,
+    .luxury-section h2,
+    .contact-info h2 {
+      font-size: 2.5rem;
+      color: var(--gold);
+    }
   </style>
 </head>
 <body>
-  <div class="fluid-overlay"></div>
   <header>
     <h1>Welcome to Promise Atelier</h1>
     <p>Your destination for exquisite, handcrafted designs.</p>
     <a class="cta-button" href="https://wa.me/2348072370300?text=Hello%20Promise%20Atelier,%20I'm%20interested%20in%20your%20design%20services!" target="_blank">Schedule Consultation</a>
-  </header>  <nav>
+  </header>
+
+  <nav>
     <a href="#services">Services</a>
     <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
-  </nav>  <section class="luxury-section" id="about">
-    <h2>About Me</h2>
-    <p>I’m a passionate designer with nearly two years of experience crafting flyers, posters, logos, and more. I started Promise Atelier to bring bold, unique, and elegant visuals to life. My goal is to deliver high-quality designs that make your brand stand out.</p>
-  </section>  <section class="luxury-section" id="services">
+  </nav>
+
+  <section class="about-section" id="about">
+    <h2>About Us</h2>
+    <p>At Promise Atelier, we believe in the beauty of luxury design. With an eye for detail and a passion for excellence, we create designs that make a statement. From branding to marketing materials, each project is tailored to meet your unique needs. Our mission is to elevate your brand with exceptional designs that resonate with your audience and stand out in a crowded market.</p>
+  </section>
+
+  <section class="luxury-section" id="services">
     <h2>Our Services</h2>
     <p>At Promise Atelier, we specialize in creating stunning designs tailored to your business needs. Whether you're looking for eye-catching flyers, unique logos, or personalized posters, we bring your vision to life with elegance and craftsmanship. We also offer professional video editing services to complete your visual identity.</p>
-  </section>  <section class="luxury-section" id="pricing">
-    <h2>Pricing</h2>
-    <p>We believe in transparent pricing with no hidden fees. Below are our standard packages:</p><div class="pricing-table">
-  <!-- Flyers -->
-  <div class="package">
-    <h3>Flyers</h3>
-    <h4>Basic Package - ₦5,000</h4>
-    <ul>
-      <li>1 Custom Flyer Design</li>
-      <li>Consultation Session</li>
-    </ul>
-    <h4>Premium Package - ₦10,000</h4>
-    <ul>
-      <li>2 Custom Flyer Designs</li>
-      <li>Priority Consultation</li>
-      <li>Editable Source Files</li>
-    </ul>
-  </div>
-  <!-- Posters -->
-  <div class="package">
-    <h3>Posters</h3>
-    <h4>Basic Package - ₦7,000</h4>
-    <ul>
-      <li>1 Custom Poster Design</li>
-      <li>Consultation Session</li>
-    </ul>
-    <h4>Premium Package - ₦14,000</h4>
-    <ul>
-      <li>2 Custom Poster Designs</li>
-      <li>Priority Consultation</li>
-      <li>Editable Source Files</li>
-    </ul>
-  </div>
-  <!-- Banners -->
-  <div class="package">
-    <h3>Banner Design</h3>
-    <h4>Basic Package - ₦8,000</h4>
-    <ul>
-      <li>1 Custom Banner Design</li>
-      <li>Consultation Session</li>
-    </ul>
-    <h4>Premium Package - ₦16,000</h4>
-    <ul>
-      <li>2 Custom Banner Designs</li>
-      <li>Priority Consultation</li>
-      <li>Editable Source Files</li>
-    </ul>
-  </div>
-  <!-- T-Shirts -->
-  <div class="package">
-    <h3>T-Shirts</h3>
-    <h4>Basic Package - ₦6,000</h4>
-    <ul>
-      <li>1 Custom T-Shirt Design</li>
-      <li>Consultation Session</li>
-    </ul>
-    <h4>Premium Package - ₦12,000</h4>
-    <ul>
-      <li>2 Custom T-Shirt Designs</li>
-      <li>Priority Consultation</li>
-      <li>Editable Source Files</li>
-    </ul>
-  </div>
-  <!-- Videos -->
-  <div class="package">
-    <h3>Videos</h3>
-    <h4>Long Videos (>2 minutes)</h4>
-    <ul>
-      <li>Basic Package - ₦20,000</li>
-      <li>Premium Package - ₦40,000</li>
-    </ul>
-    <h4>Short Videos (<2 minutes)</h4>
-    <ul>
-      <li>Basic Package - ₦15,000</li>
-      <li>Premium Package - ₦30,000</li>
-    </ul>
-  </div>
-</div>
+  </section>
 
-  </section>  <section class="contact-info" id="contact">
+  <section class="luxury-section" id="pricing">
+    <h2>Pricing</h2>
+    <p>We believe in transparent pricing with no hidden fees. Below are our standard packages:</p>
+
+    <div class="pricing-table">
+      <!-- Flyers Pricing -->
+      <div class="package">
+        <h3>Flyers</h3>
+        <h4>Basic Package - ₦5,000</h4>
+        <ul>
+          <li>1 Custom Flyer Design</li>
+          <li>Consultation Session</li>
+        </ul>
+        <h4>Premium Package - ₦10,000</h4>
+        <ul>
+          <li>2 Custom Flyer Designs</li>
+          <li>Priority Consultation</li>
+          <li>Editable Source Files</li>
+        </ul>
+      </div>
+      
+      <!-- Posters Pricing -->
+      <div class="package">
+        <h3>Posters</h3>
+        <h4>Basic Package - ₦7,000</h4>
+        <ul>
+          <li>1 Custom Poster Design</li>
+          <li>Consultation Session</li>
+        </ul>
+        <h4>Premium Package - ₦14,000</h4>
+        <ul>
+          <li>2 Custom Poster Designs</li>
+          <li>Priority Consultation</li>
+          <li>Editable Source Files</li>
+        </ul>
+      </div>
+      
+      <!-- Banner Design Pricing -->
+      <div class="package">
+        <h3>Banner Design</h3>
+        <h4>Basic Package - ₦8,000</h4>
+        <ul>
+          <li>1 Custom Banner Design</li>
+          <li>Consultation Session</li>
+        </ul>
+        <h4>Premium Package - ₦16,000</h4>
+        <ul>
+          <li>2 Custom Banner Designs</li>
+          <li>Priority Consultation</li>
+          <li>Editable Source Files</li>
+        </ul>
+      </div>
+      
+      <!-- T-Shirt Design Pricing -->
+      <div class="package">
+        <h3>T-Shirts</h3>
+        <h4>Basic Package - ₦6,000</h4>
+        <ul>
+          <li>1 Custom T-Shirt Design</li>
+          <li>Consultation Session</li>
+        </ul>
+        <h4>Premium Package - ₦12,000</h4>
+        <ul>
+          <li>2 Custom T-Shirt Designs</li>
+          <li>Priority Consultation</li>
+          <li>Editable Source Files</li>
+        </ul>
+      </div>
+
+      <!-- Video Pricing -->
+      <div class="package">
+        <h3>Videos</h3>
+        <h4>Long Videos (>2 minutes)</h4>
+        <ul>
+          <li>Basic Package - ₦20,000</li>
+          <li>Premium Package - ₦40,000</li>
+        </ul>
+        <h4>Short Videos (<2 minutes)</h4>
+        <ul>
+          <li>Basic Package - ₦15,000</li>
+          <li>Premium Package - ₦30,000</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-info" id="contact">
     <h2>Contact Us</h2>
     <p>For inquiries, please call us at:</p>
     <p><a href="tel:+2348072370300">0807 237 0300</a></p>
     <p><a href="tel:+2349162615672">0916 261 5672</a></p>
     <p>Or email us at: <a href="mailto:promiseatelier1@gmail.com">promiseatelier1@gmail.com</a></p>
-  </section>  <footer>
+  </section>
+
+  <footer>
     <p>&copy; 2025 Promise Atelier. All rights reserved.</p>
   </footer>
 </body>
