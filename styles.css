@@ -1,149 +1,112 @@
-/* Base styles for the page */
-body {
-  font-family: Arial, sans-serif;
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  overflow: hidden; /* Ensure no scrollbars */
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+  overflow-x: hidden;
 }
 
-/* Navigation bar */
-nav {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-right: 20px;
-  font-weight: bold;
-}
-
-/* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
   background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg') no-repeat center center/cover;
   display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: hidden;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
 }
 
 .overlay {
-  text-align: center;
-  color: white;
+  position: relative;
+  background-color: rgba(0, 0, 64, 0.5); /* transparent midnight blue */
+  padding: 50px;
+  border-radius: 15px;
   z-index: 2;
 }
 
 .brand {
-  font-size: 5rem;
+  font-size: 3rem;
   font-weight: bold;
-  letter-spacing: 2px;
-  color: #FFD700; /* Golden color */
-  animation: fadeIn 2s ease-out; /* Fade in effect */
+  color: gold;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .tagline {
-  font-size: 1.5rem;
-  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
 .cta {
   display: inline-block;
-  background-color: #FFD700;
-  color: black;
-  padding: 15px 30px;
-  margin-top: 20px;
-  font-size: 1.2rem;
+  padding: 12px 25px;
+  background-color: gold;
+  color: #000;
   text-decoration: none;
-  border-radius: 5px;
   font-weight: bold;
-  transition: background-color 0.3s;
+  border-radius: 8px;
+  transition: background 0.3s ease;
 }
 
 .cta:hover {
-  background-color: #FFB300;
+  background-color: #ffd700;
 }
 
-/* Liquid Flow Animation */
-.wave-animation {
+/* Navigation Styling */
+nav {
   position: absolute;
-  bottom: -150px;  /* Start position outside of viewport */
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+nav a {
+  background-color: rgba(25, 25, 112, 0.85);
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background-color: rgba(25, 25, 112, 1);
+}
+
+/* Background Effects */
+.wave-bg {
+  position: absolute;
   width: 100%;
-  height: 150px;
-  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/waves.svg') repeat-x;
-  animation: waveMove 20s linear infinite;  /* Slowed down for calm river effect */
-  z-index: 1;
+  height: 100%;
+  background: url('https://i.gifer.com/ZZ5H.gif') center/cover no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+  animation: riverFlow 20s linear infinite;
 }
 
-@keyframes waveMove {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+@keyframes riverFlow {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 0; }
 }
 
-/* Particles / Sparkles Animation */
 .particles {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.particles::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 1px;
+  width: 100%;
   height: 100%;
-  background: transparent;
-  animation: fallingParticles 10s infinite linear;
+  background: url('https://i.gifer.com/fxEy.gif') center/cover no-repeat;
+  opacity: 0.2;
+  animation: sparkle 4s infinite linear;
 }
 
-.particles::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 25%;
-  width: 1px;
-  height: 100%;
-  background: transparent;
-  animation: fallingParticles 12s infinite linear;
-}
-
-@keyframes fallingParticles {
-  0% {
-    transform: translateY(-100%) scale(0.5);
-    opacity: 0.7;
-  }
-  50% {
-    transform: translateY(50vh) scale(1.2);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(100%) scale(1);
-    opacity: 0;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes sparkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.4; }
 }
