@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>A&P ATELIER - Luxury Studio</title>
+  <title>A&P ATELIER - About</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -17,11 +17,8 @@
       color: #f5f5f5;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       position: relative;
-      padding-bottom: 60px;
+      padding-bottom: 100px;
     }
 
     body::before {
@@ -31,7 +28,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg ... %3E"); /* Same luxury background pattern */
+      background-image: url("data:image/svg+xml,%3Csvg ... %3E"); /* Your original SVG background pattern */
       opacity: 0.5;
       z-index: -1;
     }
@@ -55,8 +52,7 @@
 
     .luxury-name-container {
       text-align: center;
-      padding: 60px 20px 40px;
-      perspective: 1000px;
+      padding: 80px 20px 40px;
       position: relative;
     }
 
@@ -65,13 +61,49 @@
       font-weight: 700;
       font-size: 4.5rem;
       text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      padding: 20px 60px;
+      animation: reveal 2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(40px);
+      background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(0, 0, 0, 0.9));
+      border-radius: 8px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+
+    .luxury-name span {
       background: linear-gradient(45deg, #D4AF37, #FFD700, #F5F5DC, #FFD700, #D4AF37);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-size: 200% 200%;
-      animation: gradientShift 4s linear infinite, reveal 2s ease-out forwards;
-      opacity: 0;
-      transform: translateY(40px);
+      animation: gradientShift 4s linear infinite;
+      position: relative;
+      z-index: 2;
+    }
+
+    .luxury-name::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transform: rotate(25deg);
+      animation: shine 5s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -60%; }
+      20% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
     }
 
     @keyframes reveal {
@@ -82,22 +114,18 @@
       }
     }
 
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
-    }
-
     .subtitle {
       font-size: 1.2rem;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-top: 20px;
       color: rgba(255, 255, 255, 0.7);
-      margin-top: 10px;
     }
 
     .about-section {
       max-width: 900px;
       padding: 30px;
-      margin: 40px auto;
+      margin: 50px auto;
       background-color: rgba(0, 0, 0, 0.5);
       border-radius: 15px;
       color: #f0f0f0;
@@ -133,7 +161,7 @@
 </head>
 <body>
   <div class="luxury-name-container">
-    <h1 class="luxury-name">A&P ATELIER</h1>
+    <h1 class="luxury-name"><span>A&P ATELIER</span></h1>
     <p class="subtitle">WHERE STYLE MEETS INNOVATION</p>
   </div>
 
@@ -155,7 +183,7 @@
   <div class="diamond-grid"></div>
 
   <script>
-    // Floating diamonds
+    // Floating particles
     for (let i = 0; i < 50; i++) {
       const diamond = document.createElement('div');
       diamond.classList.add('diamond');
