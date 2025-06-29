@@ -4,51 +4,299 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us - Promise Atelier</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      background: url('about-bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
+      background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+      color: #f5f5f5;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
       padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Luxury pattern overlay */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.07' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.5;
+      z-index: -1;
     }
 
     .about-container {
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 10px;
-      padding: 40px;
-      max-width: 800px;
-      margin: auto;
-      margin-top: 60px;
+      background: rgba(10, 10, 10, 0.85);
+      border-radius: 15px;
+      padding: 60px 40px;
+      max-width: 900px;
+      margin: 40px auto;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Luxury gold accents */
+    .about-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    }
+
+    .about-container::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .logo-container img {
+      width: 180px;
+      height: auto;
+      filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+    }
+
+    .logo-container::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #D4AF37, transparent);
     }
 
     h1 {
       text-align: center;
-      font-size: 2.5em;
+      font-size: 2.8em;
+      margin-bottom: 40px;
+      color: #D4AF37;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+      letter-spacing: 1px;
+      font-weight: 300;
+    }
+
+    .content-wrapper {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .image-container {
+      flex: 1;
+      min-width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .image-container:hover {
+      transform: translateY(-5px);
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .image-container:hover img {
+      transform: scale(1.03);
+    }
+
+    .text-content {
+      flex: 1.5;
     }
 
     p {
       line-height: 1.8;
       font-size: 1.1em;
+      margin-bottom: 25px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    p::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #D4AF37;
+      font-size: 1.2em;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 20px;
+    }
+
+    .stat-item .number {
+      font-size: 2.5em;
+      color: #D4AF37;
+      font-weight: 300;
+      margin-bottom: 5px;
+    }
+
+    .stat-item .label {
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.8;
+    }
+
+    .quote {
+      font-style: italic;
+      text-align: center;
+      margin: 40px auto;
+      padding: 30px;
+      max-width: 600px;
+      position: relative;
+      border-left: 2px solid #D4AF37;
+      background: rgba(212, 175, 55, 0.05);
+      border-radius: 0 10px 10px 0;
+    }
+
+    .quote::before, .quote::after {
+      content: """;
+      font-size: 3em;
+      color: #D4AF37;
+      position: absolute;
+      opacity: 0.3;
+    }
+
+    .quote::before {
+      top: -10px;
+      left: 10px;
+    }
+
+    .quote::after {
+      bottom: -30px;
+      right: 10px;
+    }
+
+    .signature {
+      text-align: right;
+      margin-top: 30px;
+      color: #D4AF37;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 1.5em;
+      letter-spacing: 1px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+      
+      .image-container {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .about-container {
+        padding: 40px 20px;
+      }
+      
+      h1 {
+        font-size: 2.2em;
+      }
+      
+      .stats {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
   <div class="about-container">
+    <div class="logo-container">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Ctext x='100' y='40' font-family='Arial, sans-serif' font-size='32' fill='%23D4AF37' text-anchor='middle'%3EPromise%3C/text%3E%3Ctext x='100' y='55' font-family='Arial, sans-serif' font-size='18' fill='%23D4AF37' text-anchor='middle' font-style='italic'%3EAtelier%3C/text%3E%3C/svg%3E" alt="Promise Atelier Logo">
+    </div>
+    
     <h1>About Promise Atelier</h1>
-    <p>
-      Promise Atelier is a creative powerhouse where innovation meets elegance.
-      With a keen eye for modern design and over 2 years of experience in graphic design, 
-      we bring your ideas to life through stylish, purposeful visuals.
-    </p>
-    <p>
-      Whether it's a brand identity, website, or custom design solution, 
-      we are committed to delivering results that feel luxurious, timeless, and effective.
-    </p>
-    <p>
-      At Promise Atelier, we believe that every design should tell a story — your story.
-    </p>
+    
+    <div class="content-wrapper">
+      <div class="image-container">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23202020'/%3E%3Cpath d='M150,100 Q300,50 450,100 T600,150 L600,300 L0,300 L0,150 Q150,200 300,150 T450,100' fill='%233a3a3a'/%3E%3Ccircle cx='300' cy='200' r='100' fill='%234a4a4a'/%3E%3Cpath d='M250,180 L300,230 L370,150' fill='none' stroke='%23D4AF37' stroke-width='10' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="Luxury Design Studio">
+      </div>
+      
+      <div class="text-content">
+        <p>
+          Promise Atelier is a creative powerhouse where innovation meets elegance.
+          With a keen eye for modern design and over 2 years of experience in graphic design, 
+          we bring your ideas to life through stylish, purposeful visuals.
+        </p>
+        <p>
+          Whether it's a brand identity, website, or custom design solution, 
+          we are committed to delivering results that feel luxurious, timeless, and effective.
+        </p>
+        <p>
+          At Promise Atelier, we believe that every design should tell a story — your story.
+        </p>
+        
+        <div class="stats">
+          <div class="stat-item">
+            <div class="number">2+</div>
+            <div class="label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="number">150+</div>
+            <div class="label">Projects</div>
+          </div>
+          <div class="stat-item">
+            <div class="number">98%</div>
+            <div class="label">Client Satisfaction</div>
+          </div>
+        </div>
+        
+        <div class="quote">
+          "Design is not just what it looks like and feels like. Design is how it works."
+          <div class="signature">- Promise Atelier Philosophy</div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
-</html>
+        </html>
