@@ -1,38 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A&P ATELIER - Luxury Animation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A&P ATELIER - Luxury Studio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- Keep all your existing <style> content unchanged here -->
-  <!-- Skipping for brevity, assuming you pasted the long CSS part already -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding-bottom: 60px;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg ... %3E"); /* Same luxury background pattern */
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .diamond {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: rgba(212, 175, 55, 0.7);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      animation: float 12s infinite linear;
+      z-index: -1;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
+
+    .luxury-name-container {
+      text-align: center;
+      padding: 60px 20px 40px;
+      perspective: 1000px;
+      position: relative;
+    }
+
+    .luxury-name {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 4.5rem;
+      text-transform: uppercase;
+      background: linear-gradient(45deg, #D4AF37, #FFD700, #F5F5DC, #FFD700, #D4AF37);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 200%;
+      animation: gradientShift 4s linear infinite, reveal 2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        text-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+      }
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 10px;
+    }
+
+    .about-section {
+      max-width: 900px;
+      padding: 30px;
+      margin: 40px auto;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      color: #f0f0f0;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .about-section h2 {
+      text-align: center;
+      color: #D4AF37;
+      margin-bottom: 20px;
+      font-size: 2rem;
+    }
+
+    .diamond-grid {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .diamond-grid div {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: rgba(212, 175, 55, 0.1);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+  </style>
 </head>
 <body>
   <div class="luxury-name-container">
-    <div class="border-deco border-top"></div>
-    <div class="border-deco border-right"></div>
-    <div class="border-deco border-bottom"></div>
-    <div class="border-deco border-left"></div>
-
-    <h1 class="luxury-name">
-      <span>A&P ATELIER</span>
-      <span class="atelier">Luxury Studio</span>
-    </h1>
-
+    <h1 class="luxury-name">A&P ATELIER</h1>
     <p class="subtitle">WHERE STYLE MEETS INNOVATION</p>
-
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-pinterest"></i></a>
-      <a href="#"><i class="fab fa-behance"></i></a>
-      <a href="#"><i class="fab fa-dribbble"></i></a>
-    </div>
   </div>
 
-  <!-- About Us Section -->
-  <div style="max-width: 900px; margin: auto; padding: 40px 20px; background-color: rgba(0,0,0,0.6); border-radius: 12px; color: #fff; font-size: 1.1rem; line-height: 1.8;">
-    <h2 style="text-align: center; font-size: 2.2rem; color: #D4AF37; margin-bottom: 20px;">About Us</h2>
+  <div class="about-section">
+    <h2>About Us</h2>
     <p>
       <strong>A&P ATELIER</strong> is a luxury-focused creative brand that blends sophistication, technology, and visual artistry. 
       With a passion for elegance and premium aesthetics, we bring bold ideas to life through animations, design, and brand storytelling.
@@ -49,7 +155,7 @@
   <div class="diamond-grid"></div>
 
   <script>
-    // Diamond particle floaters
+    // Floating diamonds
     for (let i = 0; i < 50; i++) {
       const diamond = document.createElement('div');
       diamond.classList.add('diamond');
@@ -64,7 +170,6 @@
     // Diamond grid
     const grid = document.querySelector('.diamond-grid');
     const size = 60;
-
     for (let y = 0; y < window.innerHeight; y += size) {
       for (let x = 0; x < window.innerWidth; x += size) {
         const diamond = document.createElement('div');
@@ -74,22 +179,6 @@
         grid.appendChild(diamond);
       }
     }
-
-    // Hover animation on title
-    const luxuryName = document.querySelector('.luxury-name');
-    luxuryName.addEventListener('mousemove', (e) => {
-      const rect = luxuryName.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width;
-      const y = (e.clientY - rect.top) / rect.height;
-
-      luxuryName.style.transform = `rotateX(${(0.5 - y) * 10}deg) rotateY(${(x - 0.5) * 10}deg)`;
-      luxuryName.style.boxShadow = `${(x - 0.5) * 20}px ${(y - 0.5) * 20}px 50px rgba(0, 0, 0, 0.7)`;
-    });
-
-    luxuryName.addEventListener('mouseleave', () => {
-      luxuryName.style.transform = 'rotateX(0) rotateY(0)';
-      luxuryName.style.boxShadow = '0 20px 50px rgba(0, 0, 0, 0.7)';
-    });
   </script>
 </body>
 </html>
