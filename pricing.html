@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Promise Smart Math Calculator</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 40px;
+    }
+    input, select, button {
+      padding: 10px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    input, select {
+      width: 200px;
+    }
+    button {
+      background: #28a745;
+      color: white;
+      cursor: pointer;
+    }
+    .output {
+      margin-top: 20px;
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>📐 Promise Smart Math Calculator</h1>
+
+  <input id="num1" type="number" placeholder="Enter first number">
+  <select id="operation">
+    <option value="add">+</option>
+    <option value="subtract">−</option>
+    <option value="multiply">×</option>
+    <option value="divide">÷</option>
+    <option value="square">Square</option>
+    <option value="promise">Promise Law</option>
+  </select>
+  <input id="num2" type="number" placeholder="Enter second number (or leave blank)">
+  <br>
+  <button onclick="calculate()">Calculate</button>
+
+  <div class="output" id="result"></div>
+
+  <script>
+    function calculate() {
+      const n1 = parseFloat(document.getElementById("num1").value);
+      const op = document.getElementById("operation").value;
+      const n2 = parseFloat(document.getElementById("num2").value);
+      let result = "";
+      let steps = "";
+
+      if (isNaN(n1)) {
+        result = "❗ Enter at least the first number.";
+      } else {
+        switch (op) {
+          case "add":
+            result = n1 + n2;
+            steps = `${n1} + ${n2} = ${result}`;
+            break;
+          case "subtract":
+            result = n1 - n2;
+            steps = `${n1} - ${n2} = ${result}`;
+            break;
+          case "multiply":
+            result = n1 * n2;
+            steps = `${n1} × ${n2} = ${result}`;
+            break;
+          case "divide":
+            if (n2 === 0) {
+              steps = "❌ Division by zero!";
+            } else {
+              result = n1 / n2;
+              steps = `${n1} ÷ ${n2} = ${result}`;
+            }
+            break;
+          case "square":
+            result = n1 * n1;
+            steps = `${n1}² = ${n1} × ${n1} = ${result}`;
+            break;
+          case "promise":
+            let a = Math.round(n1 / 10) * 10; // nearest round number (e.g. 100, 1000)
+            let b = n1 - a;
+            let a2 = a * a;
+            let ab2 = 2 * a * b;
+            let b2 = b * b;
+            result = a2 + ab2 + b2;
+            steps = `
+              Using Promise Square Expansion Law:<br>
+              n² = a² + 2ab + b²<br><br>
+              n = ${n1}, a = ${a}, b = ${b}<br>
+              a² = ${a}² = ${a2}<br>
+              2ab = 2 × ${a} × ${b} = ${ab2}<br>
+              b² = ${b}² = ${b2}<br><br>
+              Total = ${a2} + ${ab2} + ${b2} = <strong>${result}</strong>
+            `;
+            break;
+          default:
+            steps = "❗ Unknown operation.";
+        }
+      }
+
+      document.getElementById("result").innerHTML = steps;
+    }
+  </script>
+</body>
+      </html>
