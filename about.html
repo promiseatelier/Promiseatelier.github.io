@@ -13,12 +13,13 @@
     }
 
     body {
-      background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);
+      background: linear-gradient(135deg, #0a0a0a, #000);
       color: #f5f5f5;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       min-height: 100vh;
-      position: relative;
       padding-bottom: 100px;
+      overflow: hidden;
+      position: relative;
     }
 
     .luxury-name-container {
@@ -28,20 +29,17 @@
     }
 
     .luxury-name {
-      position: relative;
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       font-size: 4.5rem;
       text-transform: uppercase;
+      position: relative;
       display: inline-block;
-      padding: 20px 60px;
+      padding: 30px 80px;
+      background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.9));
       border-radius: 12px;
-      background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(0, 0, 0, 0.95));
       overflow: hidden;
-      opacity: 0;
-      transform: translateY(40px);
-      animation: reveal 2s ease-out forwards;
-      box-shadow: 0 0 60px rgba(212, 175, 55, 0.25);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
     }
 
     .luxury-name span.text {
@@ -50,92 +48,50 @@
       -webkit-text-fill-color: transparent;
       background-size: 200% 200%;
       animation: gradientShift 4s linear infinite;
-      position: relative;
       z-index: 2;
+      position: relative;
     }
 
-    .luxury-name::before {
-      content: "";
+    /* Moving border lines */
+    .luxury-name::before,
+    .luxury-name::after {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
+      border: 2px solid transparent;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, transparent, #D4AF37, transparent);
-      opacity: 0.1;
-      animation: shimmer 5s infinite linear;
-    }
-
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-
-    .animated-border {
+      top: 0;
+      left: 0;
+      border-radius: 12px;
       pointer-events: none;
     }
 
-    .animated-border span {
-      position: absolute;
-      background: linear-gradient(90deg, #FFD700, #D4AF37);
+    .luxury-name::before {
+      border-top: 2px solid #FFD700;
+      border-right: 2px solid #FFD700;
+      animation: moveLine1 4s linear infinite;
     }
 
-    .border-top, .border-bottom {
-      height: 3px;
-      width: 0;
-      left: 0;
+    .luxury-name::after {
+      border-bottom: 2px solid #FFD700;
+      border-left: 2px solid #FFD700;
+      animation: moveLine2 4s linear infinite;
+      animation-delay: 2s;
     }
 
-    .border-top {
-      top: 0;
-      animation: borderTop 1s forwards ease-in-out;
+    @keyframes moveLine1 {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
-    .border-bottom {
-      bottom: 0;
-      animation: borderBottom 1s 2s forwards ease-in-out;
-    }
-
-    .border-left, .border-right {
-      width: 3px;
-      height: 0;
-      top: 0;
-    }
-
-    .border-right {
-      right: 0;
-      animation: borderRight 1s 1s forwards ease-in-out;
-    }
-
-    .border-left {
-      left: 0;
-      animation: borderLeft 1s 3s forwards ease-in-out;
-    }
-
-    @keyframes borderTop {
-      to { width: 100%; }
-    }
-    @keyframes borderRight {
-      to { height: 100%; }
-    }
-    @keyframes borderBottom {
-      to { width: 100%; }
-    }
-    @keyframes borderLeft {
-      to { height: 100%; }
+    @keyframes moveLine2 {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
     }
 
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       100% { background-position: 200% 50%; }
-    }
-
-    @keyframes reveal {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-        text-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
-      }
     }
 
     .subtitle {
@@ -154,6 +110,8 @@
       border-radius: 15px;
       font-size: 1.1rem;
       line-height: 1.8;
+      position: relative;
+      z-index: 1;
     }
 
     .about-section h2 {
@@ -165,26 +123,94 @@
 
     .stats {
       display: flex;
-      justify-content: space-around;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
       margin-top: 30px;
-      text-align: center;
     }
 
-    .stats div {
-      background: rgba(255, 215, 0, 0.08);
-      padding: 20px;
+    .stat-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #D4AF37;
       border-radius: 10px;
+      padding: 20px 30px;
+      text-align: center;
+      min-width: 160px;
+      transition: transform 0.3s ease;
     }
 
-    .stats h3 {
+    .stat-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+    }
+
+    .stat-number {
       font-size: 2rem;
+      font-weight: bold;
       color: #FFD700;
     }
 
-    .stats p {
-      font-size: 1rem;
-      margin-top: 5px;
+    .stat-label {
+      font-size: 0.95rem;
       color: #ccc;
+      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Floating Diamonds */
+    .diamond {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: rgba(212, 175, 55, 0.7);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      animation: float 12s infinite linear;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Diamond Grid */
+    .diamond-grid {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .diamond-grid div {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: rgba(212, 175, 55, 0.07);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .luxury-name {
+        font-size: 2.8rem;
+        padding: 20px 40px;
+      }
+
+      .stat-box {
+        min-width: 120px;
+      }
     }
   </style>
 </head>
@@ -192,10 +218,6 @@
   <div class="luxury-name-container">
     <h1 class="luxury-name">
       <span class="text">A&amp;P ATELIER</span>
-      <span class="animated-border border-top"></span>
-      <span class="animated-border border-right"></span>
-      <span class="animated-border border-bottom"></span>
-      <span class="animated-border border-left"></span>
     </h1>
     <p class="subtitle">WHERE STYLE MEETS INNOVATION</p>
   </div>
@@ -215,19 +237,53 @@
     </p>
 
     <div class="stats">
-      <div>
-        <h3>98%</h3>
-        <p>Client Satisfaction</p>
+      <div class="stat-box">
+        <div class="stat-number">98%</div>
+        <div class="stat-label">Client Satisfaction</div>
       </div>
-      <div>
-        <h3>120+</h3>
-        <p>Projects Delivered</p>
+      <div class="stat-box">
+        <div class="stat-number">120+</div>
+        <div class="stat-label">Successful Projects</div>
       </div>
-      <div>
-        <h3>15+</h3>
-        <p>Brands Partnered</p>
+      <div class="stat-box">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Support Availability</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number">2+</div>
+        <div class="stat-label">Years of Excellence</div>
       </div>
     </div>
   </div>
+
+  <!-- Diamond Grid -->
+  <div class="diamond-grid"></div>
+
+  <script>
+    // Floating diamond particles
+    for (let i = 0; i < 50; i++) {
+      const diamond = document.createElement('div');
+      diamond.classList.add('diamond');
+      diamond.style.left = `${Math.random() * 100}%`;
+      diamond.style.top = `${Math.random() * 100}%`;
+      diamond.style.animationDelay = `${Math.random() * 10}s`;
+      diamond.style.width = `${Math.random() * 6 + 4}px`;
+      diamond.style.height = diamond.style.width;
+      document.body.appendChild(diamond);
+    }
+
+    // Diamond grid background
+    const grid = document.querySelector('.diamond-grid');
+    const size = 60;
+    for (let y = 0; y < window.innerHeight; y += size) {
+      for (let x = 0; x < window.innerWidth; x += size) {
+        const diamond = document.createElement('div');
+        diamond.style.left = `${x}px`;
+        diamond.style.top = `${y}px`;
+        diamond.style.opacity = Math.random() * 0.1;
+        grid.appendChild(diamond);
+      }
+    }
+  </script>
 </body>
-</html>
+          </html>
