@@ -1,135 +1,127 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body */
+/* Reset & Fonts */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #fff;
-  color: #fff;
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: #0a0a0a;
+  color: #ffffff;
 }
 
-/* Navigation Styling */
-nav {
-  background: rgba(0, 0, 64, 0.8); /* Midnight Blue */
-  padding: 1rem 2rem;
+/* Navbar */
+.navbar {
   display: flex;
-  justify-content: center;
-  gap: 5rem; /* Space between links */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-nav a {
-  color: rgba(255, 255, 255, 0.85);
-  text-decoration: none;
+.glass {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
   font-weight: bold;
-  font-size: 1.3rem;
-  padding: 0.5rem 1.5rem; /* Extra padding around the text */
-  border-radius: 10px;
+  color: gold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-btn {
+  text-decoration: none;
+  padding: 0.6rem 1.4rem;
+  color: #f9f9f9;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  font-weight: 500;
+  background: linear-gradient(145deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
   transition: all 0.3s ease;
 }
 
-nav a:hover {
+.nav-btn:hover,
+.nav-btn.active {
   color: gold;
-  background: rgba(255, 215, 0, 0.1);
+  background: rgba(255, 215, 0, 0.2);
+  border-color: gold;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
 }
 
 /* Hero Section */
 .hero {
   position: relative;
-  height: 100vh;
-  background: url('https://raw.githubusercontent.com/promiseatelier/Promiseatelier.github.io/main/image.jpg') center center / cover no-repeat;
+  height: 120vh;
+  background: url('image.jpg') center/cover no-repeat;
   display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: hidden;
-  z-index: 1;
+  justify-content: center;
+  text-align: center;
 }
 
-/* Overlay for Hero Section */
-.hero .overlay {
-  background: rgba(0, 0, 64, 0.5); /* Transparent navy blue background */
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 3rem;
+  border-radius: 20px;
+  max-width: 700px;
+  animation: fadeIn 1.2s ease-in-out;
 }
 
-/* Brand Name - A&P ATELIER */
-.brand {
-  font-size: 3rem;
+h1.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  margin: 0;
   color: gold;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 5px;
-  animation: fadeIn 3s ease-in-out forwards;
 }
 
-/* Tagline Under the Brand Name */
 .tagline {
-  font-size: 1.2rem;
-  color: #fff;
-  margin-top: 20px;
+  font-size: 1.4rem;
+  margin: 1.5rem 0;
+  font-weight: 300;
+  color: #d3d3d3;
 }
 
-/* Call to Action Button */
-.cta {
+/* Call-to-Action Button */
+.cta-button {
   display: inline-block;
-  background-color: gold;
-  padding: 15px 25px;
+  padding: 1rem 2.4rem;
+  font-weight: bold;
+  border-radius: 35px;
+  background: linear-gradient(145deg, gold, #d4af37);
   color: #000;
-  font-size: 1.1rem;
   text-decoration: none;
-  border-radius: 5px;
-  margin-top: 30px;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
 }
 
-.cta:hover {
-  background-color: rgba(255, 215, 0, 0.8);
-  color: white;
+.cta-button:hover {
+  background: #fff;
+  color: #111;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
 }
 
-/* Fade-in Animation for Brand Name */
+/* Animations */
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 2rem;
-  }
+.animated-fade {
+  animation: fadeIn 1.4s ease-in-out;
+}
 
-  .hero {
-    height: 80vh;
-  }
-
-  .brand {
-    font-size: 2rem;
-  }
-
-  .cta {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
+.animated-slide {
+  animation: fadeIn 1.6s ease-in-out;
   }
