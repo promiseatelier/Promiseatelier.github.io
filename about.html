@@ -4,15 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>A&P ATELIER - About</title>
+  <!-- Google Font for Playfair Display (used in .luxury-name) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <!-- Font Awesome (optional for icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* Reset and base styles */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
+      /* Dark gradient background from dark gray to black */
       background: linear-gradient(135deg, #0a0a0a 0%, #000 100%);
       color: #f5f5f5;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,92 +24,81 @@
       position: relative;
       padding-bottom: 100px;
     }
-
     body::before {
+      /* Semi-transparent SVG pattern overlay as background */
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url("data:image/svg+xml,%3Csvg ... %3E"); /* Your original SVG background pattern */
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg ... %3E");
       opacity: 0.5;
       z-index: -1;
     }
-
+    /* Floating diamond shapes */
     .diamond {
       position: absolute;
-      width: 6px;
-      height: 6px;
-      background: rgba(212, 175, 55, 0.7);
+      width: 6px; height: 6px;
+      background: rgba(212, 175, 55, 0.7); /* gold color */
+      /* Clip to diamond shape via polygon (CSS clip-path) */
       clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
       animation: float 12s infinite linear;
       z-index: -1;
     }
-
     @keyframes float {
       0% { transform: translateY(0) rotate(0deg); opacity: 0; }
       10% { opacity: 1; }
       90% { opacity: 1; }
       100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
     }
-
+    /* Luxury brand name styling */
     .luxury-name-container {
       text-align: center;
       padding: 80px 20px 40px;
       position: relative;
     }
-
     .luxury-name {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
       font-size: 4.5rem;
       text-transform: uppercase;
-      position: relative;
       display: inline-block;
       padding: 20px 60px;
-      animation: reveal 2s ease-out forwards;
-      opacity: 0;
-      transform: translateY(40px);
       background: linear-gradient(135deg, rgba(10, 10, 10, 0.9), rgba(0, 0, 0, 0.9));
       border-radius: 8px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
       overflow: hidden;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: reveal 2s ease-out forwards;
     }
-
+    /* Gold gradient text within the heading */
     .luxury-name span {
       background: linear-gradient(45deg, #D4AF37, #FFD700, #F5F5DC, #FFD700, #D4AF37);
+      background-size: 200% 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-size: 200% 200%;
       animation: gradientShift 4s linear infinite;
-      position: relative;
-      z-index: 2;
+      position: relative; z-index: 2;
     }
-
+    /* Shining overlay effect */
     .luxury-name::before {
       content: "";
       position: absolute;
-      top: -50%;
-      left: -60%;
-      width: 50%;
-      height: 200%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      top: -50%; left: -60%;
+      width: 50%; height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
       transform: rotate(25deg);
       animation: shine 5s infinite;
     }
-
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
     @keyframes shine {
       0% { left: -60%; }
       20% { left: 100%; }
       100% { left: 100%; }
     }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 200% 50%; }
-    }
-
     @keyframes reveal {
       to {
         opacity: 1;
@@ -113,7 +106,7 @@
         text-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
       }
     }
-
+    /* Subtitle under the name */
     .subtitle {
       font-size: 1.2rem;
       letter-spacing: 4px;
@@ -121,7 +114,7 @@
       margin-top: 20px;
       color: rgba(255, 255, 255, 0.7);
     }
-
+    /* About Us section styling */
     .about-section {
       max-width: 900px;
       padding: 30px;
@@ -132,28 +125,23 @@
       font-size: 1.1rem;
       line-height: 1.8;
     }
-
     .about-section h2 {
       text-align: center;
       color: #D4AF37;
       margin-bottom: 20px;
       font-size: 2rem;
     }
-
+    /* Grid container for subtle diamond pattern background */
     .diamond-grid {
       position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+      width: 100%; height: 100%;
+      top: 0; left: 0;
       pointer-events: none;
       z-index: -1;
     }
-
     .diamond-grid div {
       position: absolute;
-      width: 10px;
-      height: 10px;
+      width: 10px; height: 10px;
       background: rgba(212, 175, 55, 0.1);
       clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     }
@@ -161,19 +149,19 @@
 </head>
 <body>
   <div class="luxury-name-container">
-    <h1 class="luxury-name"><span>A&P ATELIER</span></h1>
+    <h1 class="luxury-name"><span>A&amp;P ATELIER</span></h1>
     <p class="subtitle">WHERE STYLE MEETS INNOVATION</p>
   </div>
 
   <div class="about-section">
     <h2>About Us</h2>
     <p>
-      <strong>A&P ATELIER</strong> is a luxury-focused creative brand that blends sophistication, technology, and visual artistry. 
+      <strong>A&amp;P ATELIER</strong> is a luxury-focused creative brand that blends sophistication, technology, and visual artistry. 
       With a passion for elegance and premium aesthetics, we bring bold ideas to life through animations, design, and brand storytelling.
     </p>
     <p>
       For over 2 years, we've been redefining how people experience design — from conceptual graphics to immersive digital experiences. 
-      Whether you're a business seeking impact or an artist pursuing perfection, A&P ATELIER exists to elevate your vision with class and precision.
+      Whether you're a business seeking impact or an artist pursuing perfection, A&amp;P ATELIER exists to elevate your vision with class and precision.
     </p>
     <p>
       Every project we touch is infused with meaning, motion, and masterful detail. This is more than design. This is <strong>art in motion</strong>.
@@ -183,19 +171,19 @@
   <div class="diamond-grid"></div>
 
   <script>
-    // Floating particles
+    // Create 50 floating diamond shapes at random positions
     for (let i = 0; i < 50; i++) {
       const diamond = document.createElement('div');
       diamond.classList.add('diamond');
       diamond.style.left = `${Math.random() * 100}%`;
       diamond.style.top = `${Math.random() * 100}%`;
       diamond.style.animationDelay = `${Math.random() * 10}s`;
-      diamond.style.width = `${Math.random() * 6 + 4}px`;
-      diamond.style.height = diamond.style.width;
+      const size = Math.random() * 6 + 4;
+      diamond.style.width = `${size}px`;
+      diamond.style.height = `${size}px`;
       document.body.appendChild(diamond);
     }
-
-    // Diamond grid
+    // Populate the diamond-grid with a subtle diamond pattern
     const grid = document.querySelector('.diamond-grid');
     const size = 60;
     for (let y = 0; y < window.innerHeight; y += size) {
